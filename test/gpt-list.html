@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag Selector</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .tag-link {
+            border-radius: 2px;
+            background-color: #5d5d5d;
+            color: #fff;
+            text-decoration: none;
+            margin: 0.5rem;
+            padding: 0.5rem;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .tag-link:hover {
+            background-color: #b1b1b1;
+        }
+
+        .close-btn {
+            background-color: #e74c3c;
+            color: #fff;
+            cursor: pointer;
+            padding: 4px;
+            margin-left: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .close-btn:hover {
+            background-color: #c0392b;
+        }
+
+        .tag-container {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 20px 0;
+        }
+
+        .selected-tags {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tag-container">
+        <select id="tagSelector" multiple>
+            <option value="gyors">Gyors</option>
+            <option value="konnyu">Könnyű</option>
+            <option value="cukormentes">Cukormentes</option>
+        </select>
+    </div>
+
+    <div class="selected-tags" id="selectedTagsContainer">
+        <!-- Kiválasztott címkék jelennek meg itt -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tagSelector = document.getElementById('tagSelector');
+            const selectedTagsContainer = document.getElementById('selectedTagsContainer');
+
+            tagSelector.addEventListener('change', function () {
+                updateSelectedTags();
+            });
+
+            function updateSelectedTags() {
+                for (let i = 0; i < tagSelector.options.length; i++) {
+                    const option = tagSelector.options[i];
+
+                    if (option.selected) {
+                        const tagLink = document.createElement('a');
+                        tagLink.href = '#';
+                        tagLink.className = 'tag-link';
+                        tagLink.innerText = option.text;
+
+                        const closeBtn = document.createElement('span');
+                        closeBtn.className = 'close-btn';
+                        closeBtn.innerText = 'x';
+                        closeBtn.addEventListener('click', function () {
+                            tagLink.remove();
+                            option.selected = false;
+                        });
+
+                        tagLink.appendChild(closeBtn);
+                        selectedTagsContainer.appendChild(tagLink);
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

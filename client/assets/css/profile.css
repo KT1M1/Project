@@ -1,0 +1,18 @@
+.pfp{
+    border-radius: 50%;
+    max-width: 200px;
+}
+
+.profile-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 2rem;
+    align-items: center;
+}
+
+.number{
+    font-size: 26px;
+    font-weight: bold;
+}

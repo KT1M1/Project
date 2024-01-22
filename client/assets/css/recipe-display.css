@@ -1,0 +1,154 @@
+.recipe-body{
+    padding-top: 2rem;
+}
+
+.f-weight{
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+
+/*Recipe-name*/
+.recipe-name {
+    font-size: 26px;
+    line-height: 1.3;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 600px) {
+    .recipe-name {
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .recipe-name {
+        font-size: 40px;
+    }
+}
+
+/*User, Rating*/
+.user-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.user-name{
+    height: 25px;
+    margin: 0;
+}
+
+.rate, .user {
+    display: flex;
+    align-items: center;
+}
+
+.heart, .user-pfp{
+    margin: 0px;
+    margin-right: 0.5rem;
+    width: 25px;
+}
+
+.heart-number{
+    font-size: 25px;
+    margin: 0;
+}
+
+
+/*Tags*/
+.desc-container{
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.tag-link{
+    border-radius: 2px;
+    background-color: #377E47;
+    color: #fff;
+    text-decoration: none;
+    width: fit-content;
+    padding: 2px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.tag-link:hover{
+    background-color: #46a25bcb;
+    color: #fff;
+}
+
+.tag-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+/*Diet, Intolerance*/
+.diet-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.img-diet{
+    max-width: 50px;
+    width: calc(30px + 1.5vw);
+}
+
+/*Divider (from style.css)*/
+
+.divider-container {
+    position: relative;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.divider{  
+    position: relative;
+    margin: 0;
+    width: fit-content;
+    background-color: white;
+    z-index: 1;
+    margin-left: 10%;
+    padding: 0 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: calc(20px + 0.390625vw);
+}
+
+.divider-container hr {
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    top: 50%;
+    height: 2.3px;
+    opacity: 1;
+    color: #377E47;
+}
+
+.divide{
+    margin: 20px;
+}
+
+/*Steps*/
+.steps{
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+.steps:hover{
+    background-color: #ECECEC;
+}
+
+.step-text{
+    margin-bottom: 0px;
+    margin-left: 1rem;
+}
+
+/*Ingredient*/
+.completed {
+    opacity: 0.6; /* Fakítás */
+}

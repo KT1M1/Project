@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .diet-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 1rem;
+    }
+
+    .img-diet {
+      max-width: 50px;
+      width: calc(30px + 1.5vw);
+      display: none; /* Kezdetben elrejtjük a képeket */
+    }
+
+    .filters {
+      margin-bottom: 1rem;
+    }
+  </style>
+  <title>Érzékenységek kiválasztása</title>
+</head>
+<body>
+
+<div class="filters">
+  <label><input type="checkbox" value="egg-free"> Tojásmentes</label>
+  <label><input type="checkbox" value="sugar-free"> Cukormentes</label>
+</div>
+
+<div class="diet-container">
+  <img src="../img/egg-free.png" title="egg-free" class="img-diet">
+  <img src="../img/sugar-free.png" title="sugar-free" class="img-diet">
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Kezdetben elrejtjük a képeket
+    const images = document.querySelectorAll(".img-diet");
+    images.forEach(function (image) {
+      image.style.display = "none";
+    });
+
+    // Kiválasztott érzékenységek tárolása
+    const selectedFilters = [];
+
+    // Checkbox-ok kiválasztásának figyelése
+    document.querySelectorAll(".filters input[type=checkbox]").forEach(function (checkbox) {
+      checkbox.addEventListener("change", function () {
+        const value = this.value;
+
+        // Érzékenység hozzáadása vagy eltávolítása a kiválasztottaktól
+        if (this.checked) {
+          selectedFilters.push(value);
+        } else {
+          const index = selectedFilters.indexOf(value);
+          if (index !== -1) {
+            selectedFilters.splice(index, 1);
+          }
+        }
+
+        // Képek szűrése és megjelenítése
+        filterImages();
+      });
+    });
+
+    // Képek szűrése és megjelenítése
+    function filterImages() {
+      const images = document.querySelectorAll(".img-diet");
+
+      images.forEach(function (image) {
+        const title = image.getAttribute("title");
+
+        // Kép megjelenítése vagy elrejtése az érzékenységek alapján
+        if (selectedFilters.length === 0 || selectedFilters.includes(title)) {
+          image.style.display = "inline-block";
+        } else {
+          image.style.display = "none";
+        }
+      });
+    }
+
+    // Kezdetben elrejtjük a képeket
+    filterImages();
+  });
+</script>
+
+</body>
+</html>
