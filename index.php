@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="/client/assets/css/navbar.css">
     <link rel="stylesheet" href="/client/assets/css/popular.css">
     <link rel="stylesheet" href="/client/assets/css/return.css">
-    <title>Recipeshare</title>
+    <title>RecipesShare</title>
 </head>
 <body>
 
