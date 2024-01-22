@@ -1,5 +1,5 @@
 
-    <link rel="stylesheet" href="/client/assets/css/recipe-display.css">
+    <link rel="stylesheet" href="./client/assets/css/recipe-display.css">
 
     <div class="container recipe-body">
 
@@ -11,23 +11,23 @@
 
             <div class="col-md-7 col-sm-12">
                 <div>
-                    <img class="img-fluid" src="/client/assets/img/bologna.jpg">
+                    <img class="img-fluid" src="./client/assets/img/bologna.jpg">
                 </div>
                 <div class="user-container">
                     <div class="user">
-                        <img src="/client/assets/img/user.png" class="img-fluid user-pfp">
+                        <img src="./client/assets/img/user.png" class="img-fluid user-pfp">
                         <p class="user-name"><a href="#">Kis Tímea</a> - 2023.11.22.</p>
                     </div>
                     <div class="rate">
-                        <img class="img-fluid heart" src="/client/assets/img/heart.png" alt="" srcset="">
+                        <img class="img-fluid heart" src="./client/assets/img/heart.png" alt="" srcset="">
                         <p class="heart-number">13</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-5 col-sm-12">
                 <div class="diet-container">
-                    <img src="/client/assets/img/egg-free.png" title="egg-free" class="img-diet">
-                    <img src="/client/assets/img/sugar-free.png" title="sugar-free" class="img-diet">
+                    <img src="./client/assets/img/egg-free.png" title="egg-free" class="img-diet">
+                    <img src="./client/assets/img/sugar-free.png" title="sugar-free" class="img-diet">
                 </div>
                 <div>
                     <h2>Receptkategóriák</h2>
@@ -158,7 +158,7 @@
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="card-div">
                         <div class="card-top">
-                            <img class="card-pic" src="/client/assets/img/bolognese.jpg" alt="">
+                            <img class="card-pic" src="./client/assets/img/bolognese.jpg" alt="">
                         </div>
                         <div class="card-bottom">
                             <div class="card-text">
@@ -171,7 +171,7 @@
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="card-div">
                         <div class="card-top">
-                            <img class="card-pic" src="/client/assets/img/bolognese.jpg" alt="">
+                            <img class="card-pic" src="./client/assets/img/bolognese.jpg" alt="">
                         </div>
                         <div class="card-bottom">
                             <div class="card-text">
@@ -184,7 +184,7 @@
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="card-div">
                         <div class="card-top">
-                            <img class="card-pic" src="/client/assets/img/bolognese.jpg" alt="">
+                            <img class="card-pic" src="./client/assets/img/bolognese.jpg" alt="">
                         </div>
                         <div class="card-bottom">
                             <div class="card-text">
@@ -197,5 +197,5 @@
     
         </div>
 
-    <script src="/client/assets/js/show.js"></script>
+    <script src="./client/assets/js/show.js"></script>
    

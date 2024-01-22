@@ -1,5 +1,5 @@
 <div class="banner-container">
-    <img class="banner-img" src="/client/assets/img/banner1.jpg">
+    <img class="banner-img" src="./client/assets/img/banner1.jpg">
     <div class="text-overlay">
         <h2 class="banner-txt">Oszd meg az örömöt, ízeld meg a közösség erejét.</h2>
     </div>
@@ -24,14 +24,14 @@
             <div class="card-div">
                 <div class="rank-cube">#1</div>
                 <div class="card-top">
-                    <img class="card-pic" src="/client/assets/img/bolognese.jpg" alt="">
+                    <img class="card-pic" src="./client/assets/img/bolognese.jpg" alt="">
                 </div>
                 <div class="card-bottom">
                     <div class="card-text">
                         <p>Bolognai Spagetti</p>
                     </div>
                     <div  class="card-rate">
-                        <img class="img-fluid card-heart" src="/client/assets/img/heart.png" alt="" srcset="">
+                        <img class="img-fluid card-heart" src="./client/assets/img/heart.png" alt="" srcset="">
                         <p class="card-heart">20</p>
                     </div>
                 </div>
@@ -42,14 +42,14 @@
             <div class="card-div">
                 <div class="rank-cube">#2</div>
                 <div class="card-top">
-                    <img class="card-pic" src="/client/assets/img/bolognese.jpg" alt="">
+                    <img class="card-pic" src="./client/assets/img/bolognese.jpg" alt="">
                 </div>
                 <div class="card-bottom">
                     <div class="card-text">
                         <p>Gyors Bolognai Spagetti</p>
                     </div>
                     <div  class="card-rate">
-                        <img class="img-fluid card-heart" src="/client/assets/img/heart.png" alt="" srcset="">
+                        <img class="img-fluid card-heart" src="./client/assets/img/heart.png" alt="" srcset="">
                         <p class="card-heart">18</p>
                     </div>
                 </div>
@@ -60,14 +60,14 @@
             <div class="card-div">
                 <div class="rank-cube">#3</div>
                 <div class="card-top">
-                    <img class="card-pic" src="/client/assets/img/bolognese.jpg" alt="">
+                    <img class="card-pic" src="./client/assets/img/bolognese.jpg" alt="">
                 </div>
                 <div class="card-bottom">
                     <div class="card-text">
                         <p>Könnyű Bolognai Spagetti</p>
                     </div>
                     <div  class="card-rate">
-                        <img class="img-fluid card-heart" src="/client/assets/img/heart.png" alt="" srcset="">
+                        <img class="img-fluid card-heart" src="./client/assets/img/heart.png" alt="" srcset="">
                         <p class="card-heart">13</p>
                     </div>
                 </div>
@@ -82,25 +82,25 @@
     <div class="ing-icon-container">
         <div class="ing-nav-piece">
             <a href="" class="rotate">
-                <img class="img-fluid ing-icon rotate-image" src="/client/assets/img/mealTypes/meat2.jpg" alt="" srcset="">
+                <img class="img-fluid ing-icon rotate-image" src="./client/assets/img/mealTypes/meat2.jpg" alt="" srcset="">
                 <p class="ing-piece-txt">Hús</p>
             </a>
         </div>
         <div class="ing-icon-piece">
             <a href="" class="rotate">
-                <img class="img-fluid ing-icon rotate-image" src="/client/assets/img/mealTypes/fish.jpg" alt="" srcset="">
+                <img class="img-fluid ing-icon rotate-image" src="./client/assets/img/mealTypes/fish.jpg" alt="" srcset="">
                 <p class="ing-piece-txt">Hal</p>
             </a>
         </div>
         <div class="ing-icon-piece">
             <a href="" class="rotate">
-                <img class="img-fluid ing-icon rotate-image" src="/client/assets/img/mealTypes/pasta1.jpg" alt="" srcset="">
+                <img class="img-fluid ing-icon rotate-image" src="./client/assets/img/mealTypes/pasta1.jpg" alt="" srcset="">
                 <p class="ing-piece-txt">Tészta</p>
             </a>
         </div>
         <div class="ing-icon-piece">
             <a href="" class="rotate">
-                <img class="img-fluid ing-icon rotate-image" src="/client/assets/img/mealTypes/vegs1.jpg" alt="" srcset="">
+                <img class="img-fluid ing-icon rotate-image" src="./client/assets/img/mealTypes/vegs1.jpg" alt="" srcset="">
                 <p class="ing-piece-txt">Zöldség</p>
             </a>
         </div>
@@ -129,7 +129,7 @@
         <div class="col-12 col-md-6">
             <div class="card-div">
                 <div class="card-top">
-                    <img class="card-pic" src="/client/assets/img/bologna.jpg" alt="">
+                    <img class="card-pic" src="./client/assets/img/bologna.jpg" alt="">
                 </div>
                 <div class="card-bottom">
                     <div class="card-text">
@@ -161,7 +161,7 @@
         <div class="col-12 col-md-6">
             <div class="card-div">
                 <div class="card-top">
-                    <img class="card-pic" src="/client/assets/img/vegangranola.jpg" alt="">
+                    <img class="card-pic" src="./client/assets/img/vegangranola.jpg" alt="">
                 </div>
                 <div class="card-bottom">
                     <div class="card-text">
@@ -193,7 +193,7 @@
         <div class="col-12 col-md-6">
             <div class="card-div">
                 <div class="card-top">
-                    <img class="card-pic" src="/client/assets/img/csokisbrownie.jpg" alt="">
+                    <img class="card-pic" src="./client/assets/img/csokisbrownie.jpg" alt="">
                 </div>
                 <div class="card-bottom">
                     <div class="card-text">

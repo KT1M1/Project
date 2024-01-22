@@ -1,9 +1,9 @@
-<link rel="stylesheet" href="/client/assets/css/profile.css">
+<link rel="stylesheet" href="./client/assets/css/profile.css">
 
 <div class="container">
     <div class="row">
         <div class="col-lg-4 sm-12 profile-col">
-            <img class="img-fluid pfp" src="/client/assets/img/pfp2.jpg" alt="">
+            <img class="img-fluid pfp" src="./client/assets/img/pfp2.jpg" alt="">
         </div>
 
         <div class="col-lg-4 sm-12 profile-col">
@@ -28,7 +28,7 @@
         <div class="col-12 col-md-6">
             <div class="card-div">
                 <div class="card-top">
-                    <img class="card-pic" src="/client/assets/img/bologna.jpg" alt="">
+                    <img class="card-pic" src="./client/assets/img/bologna.jpg" alt="">
                 </div>
                 <div class="card-bottom">
                     <div class="card-text">
@@ -40,7 +40,7 @@
         <div class="col-12 col-md-6">
             <div class="card-div">
                 <div class="card-top">
-                    <img class="card-pic" src="/client/assets/img/bologna.jpg" alt="">
+                    <img class="card-pic" src="./client/assets/img/bologna.jpg" alt="">
                 </div>
                 <div class="card-bottom">
                     <div class="card-text">

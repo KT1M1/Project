@@ -20,7 +20,7 @@
 ?>
 
 
-<link rel="stylesheet" href="/client/assets/css/upload.css">
+<link rel="stylesheet" href="./client/assets/css/upload.css">
 
 <form action="" method="post">
 
@@ -43,7 +43,7 @@
     <div class="row">
         <div class="col-md-6 col-sm-12">
             <div id="drop-container" onclick="triggerFileInput()">
-                <img id="upload-icon" src="/client/assets/img/photo.png" alt="Upload Icon">
+                <img id="upload-icon" src="./client/assets/img/photo.png" alt="Upload Icon">
                 <p>Húzd ide vagy kattints a kép feltöltéséhez</p>
                 <input type="file" id="file-input" accept="image/*" onchange="displayImage(this)">
                 </div>
@@ -178,5 +178,5 @@
                     ?>
                 </select>`;
 </script>
-<script src="/client/assets/js/upload.js"></script>
+<script src="./client/assets/js/upload.js"></script>
 
