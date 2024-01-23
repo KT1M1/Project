@@ -2,7 +2,7 @@
 function displayMainCategory() {
     let element = document.getElementById("main-category");
 
-    let html = `<select name="category_1" id="main-kategoria" required onchange="mainCategoryAction(this.value)">`;
+    let html = `<select name="category[]" id="main-kategoria" required onchange="mainCategoryAction(this.value)">`;
     html += `<option selected="true" disabled="disabled">Főkategória</option>`;
 
     for(let cat of categories) {
@@ -27,7 +27,7 @@ function getSubCategories(main_cat_id) {
 function displaySubCategory(main_cat_id) {
     let element = document.getElementById("sub-category");
 
-    let html = `<select name="category_2" id="sub-kategoria" required>`;
+    let html = `<select name="category[]" id="sub-kategoria" required>`;
     html += `<option selected="true" disabled="disabled">Alkategória</option>`;
 
     subcategories = getSubCategories(main_cat_id);

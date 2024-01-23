@@ -13,16 +13,32 @@
     $units = get_units();
 
     if(isset($_POST["upload"]) && $_POST["upload"] == "1") {
-        echo "<pre>";
-        print_r($_POST);
-        echo "</pre>";
+        $img_path = image_uploader($_FILES["image"]["name"], $_FILES["image"]["tmp_name"], $_FILES["image"]["size"]);
+
+        $allergen = isset($_POST["allergen"]) ? $_POST["allergen"] : [];
+
+        upload_recipe(
+            $_POST["name"],                      //food name
+            $img_path,                          //image url
+            $_POST["description"],              //description
+            $_POST["category"],                 //category ids
+            $_POST["portion"],                  //portion
+            $_POST["time"],                      //time min
+            $allergen,                          //allergen ids
+            $_POST["ingredient_name"],          //ingredient names
+            $_POST["ingredient_quantity"],      //quantities
+            $_POST["ingredient_unit"],          //unit_ids
+            $_POST["step"],                    //steps
+            date("Y-m-d"),                      //upload date
+            $_SESSION['user']['id']             //user_id
+        );
     }
 ?>
 
 
 <link rel="stylesheet" href="../client/assets/css/upload.css">
 
-<form action="" method="post">
+<form method="post" enctype="multipart/form-data">
 
 <div class="container recipe-body">
 
@@ -35,7 +51,7 @@
         <div class="recipe-name">
                 <!--<label for="nev">Recept neve:</label>-->
                 <h2>Recept neve:</h2>
-                <input type="text" id="nev" name="nev" placeholder="Bolognai spagetti" required>
+                <input type="text" id="nev" name="name" placeholder="Bolognai spagetti" required>
         </div>
 
 
@@ -44,13 +60,13 @@
             <div id="drop-container" onclick="triggerFileInput()">
                 <img id="upload-icon" src="/client/assets/img/photo.png" alt="Upload Icon">
                 <p>Húzd ide vagy kattints a kép feltöltéséhez</p>
-                <input type="file" id="file-input" accept="image/*" onchange="displayImage(this)">
-                </div>
+            </div>
+            <input type="file" id="file-input" name="image" accept="image/*" onchange="displayImage(this)" required>
         </div>
 
         <div class="col-md-6 col-sm-12 recipe-detail">
             <div>
-                <textarea name="short-desc" id="short-desc" placeholder="Ide írhatsz egy max 300 karakteres leírást a receptedről." maxlength="300"></textarea>
+                <textarea name="description" id="description" placeholder="Ide írhatsz egy max 300 karakteres leírást a receptedről." maxlength="300"></textarea>
             </div>
         </div>
         
@@ -72,7 +88,7 @@
 
                 foreach ($other_cat_types as $type) {
                     echo '
-                    <select name="category_' . $type["id"] . '">
+                    <select name="category[]">
                         <option selected="true" disabled="disabled">' . $type["name"] . '</option>';
 
                     foreach ($other_cats as $cat) {
@@ -89,13 +105,13 @@
         <div class="col-md-6 col-sm-12">
             <div>
                 <label for="hozzavalo_adag">Hozzávalók</label>
-                <input type="number" id="hozzavalo_adag" name="hozzavalo_adag[]" placeholder="4" min="1" required>
+                <input type="number" id="hozzavalo_adag" name="portion" placeholder="4" min="1" required>
                 <label for="hozzavalo_adag">adaghoz</label>
             </div>
 
             <div>
                 <label for="ido">Elkészítési idő:</label>
-                <input type="number" id="ido" name="ido" min="1" placeholder="40" required>
+                <input type="number" id="ido" name="time" min="1" placeholder="40" required>
                 <label for="ido">perc</label>
             </div>
         </div>
@@ -122,12 +138,12 @@
         <div class="ingredient-container">
             <div class="hozzavalo-div">
                 <label class="hozzavalo-lbl">Hozzávaló:</label>
-                <input type="text" class="hozzavalo" name="hozzavalo_nev[]" placeholder="spagetti tészta" required>
+                <input type="text" class="hozzavalo" name="ingredient_name[]" placeholder="spagetti tészta" required>
                 
                 <label class="hozzavalo-lbl">Mennyiség:</label>
-                <input type="number" class="hozzavalo" name="hozzavalo_mennyiseg[]" min="1" placeholder="500" required>
+                <input type="number" class="hozzavalo" name="ingredient_quantity[]" min="1" placeholder="500" required>
                 
-                <select class="hozzavalo hozzavalo-lbl" name="hozzavalo_mertekegyseg[]">
+                <select class="hozzavalo hozzavalo-lbl" name="ingredient_unit[]">
                     <option selected="true" disabled="disabled">Mértékegység:</option>
                     <?php
                     foreach ($units as $unit) {
@@ -150,10 +166,10 @@
 
     <div class="step-container">
         <div class="lepes-div">
-            <input type="text" class="lepes" name="lepes[]" placeholder="Főzzük meg a spagetti tésztát a csomagoláson szereplő utasítások szerint sós vízben (általában 8-12 perc.)" required>
+            <input type="text" class="lepes" name="step[]" placeholder="Főzzük meg a spagetti tésztát a csomagoláson szereplő utasítások szerint sós vízben (általában 8-12 perc.)" required>
         </div>
         <div class="lepes-div">
-            <input type="text" class="lepes" name="lepes[]" placeholder="Eközben egy nagy serpenyőben hevíts olajat közepes lángon. Add hozzá a hagymát, fokhagymát, sárgarépát, párold 5-7 percig, amíg megpuhulnak." required>
+            <input type="text" class="lepes" name="step[]" placeholder="Eközben egy nagy serpenyőben hevíts olajat közepes lángon. Add hozzá a hagymát, fokhagymát, sárgarépát, párold 5-7 percig, amíg megpuhulnak." required>
         </div>
     </div>
     <!-- Új lépés mezők hozzáadása gomb -->
@@ -177,5 +193,5 @@
                     ?>
                 </select>`;
 </script>
-<script src="./client/assets/js/upload.js"></script>
+<script src="/client/assets/js/upload.js"></script>
 
