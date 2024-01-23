@@ -47,11 +47,11 @@ function registration($full_name, $user_name, $password, $password_again, $email
     }
 
     if( get_user_by_user_name( $user_name ) !=  NULL ) {
-        return "A felhasználónév fogllalt!";
+        return "A felhasználónév foglalt!";
     }
 
     if( get_user_by_email( $email ) !=  NULL ) {
-        return "Az email fogllalt!";
+        return "Az email foglalt!";
     }
 
     global $db;

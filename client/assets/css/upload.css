@@ -1,13 +1,21 @@
+input, select, .allergen-lbl{
+    margin-bottom: 1rem;
+    display: inline-block;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
 #drop-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px dashed #aaa;
+    border: 2px dashed #ccc;
     border-radius: 8px;
-    padding: 20px;
+    padding: 1rem;
     cursor: pointer;
-    height: 100%;
+    height: 30vh;
   }
 
   #drop-container:hover {
@@ -40,7 +48,7 @@ header{
 
 .add-btn{
     background-color: #377E47;
-    color: white;
+    color: #fff;
     border: 0;
     padding: 0.5rem 1.5rem;
     margin-top: 1rem;
@@ -61,8 +69,17 @@ header{
 }
 
 .recipe-name{
+    display: flex;
     padding: 1rem;
-    font-weight: bold;
+}
+
+input#nev{
+    margin-left: 1rem;
+    width: 300px;
+}
+
+.recipe-detail{
+    margin-top: 2rem;
 }
 
 /*User*/
@@ -103,6 +120,8 @@ header{
     width: 100%;
     height: 30vh;
     padding: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
 }
 
 
@@ -119,45 +138,12 @@ header{
     max-width: 50px;
 }
 
-/*Divider (from style.css)*/
-
-.divider-container {
-    position: relative;
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;
-}
-
-.divider{  
-    position: relative;
-    margin: 0;
-    width: fit-content;
-    background-color: white;
-    z-index: 1;
-    margin-left: 10%;
-    padding: 0 20px;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.divider-container hr {
-    position: absolute;
-    margin: 0;
-    width: 100%;
-    top: 50%;
-    height: 2.1px;
-    opacity: 1;
-}
-
-.divide{
-    margin: 20px;
-}
-
 /*KATEGÓRIA*/
 select{
     width: 70%;
     margin-bottom: 10px;
     padding: 5px;
-    border: 1px solid gray;
+    border: 1px solid #555;
 }
 
 select#ido{
@@ -165,8 +151,9 @@ select#ido{
 }
 
 input#hozzavalo_adag, input#ido{
+    text-align: center;
     width: 5rem;
-    margin: 0px 5px 0px 5px;
+    padding: 4px;
 }
 
 @media (max-width: 768px) {
@@ -178,10 +165,9 @@ input#hozzavalo_adag, input#ido{
 
 /*Allergén*/
 .allergen-lbl {
-    display: block;
     margin-bottom: 10px;
     padding: 5px;
-    border: 1px solid gray;
+    border: 1px solid #555;
 }
 
 input[type="checkbox"] {
@@ -189,8 +175,8 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked + label {
-    background-color: #377E47; /* Erősebb szín a kiválasztott allergénnek */
-    color: white;
+    background-color: #377E47;
+    color: #fff
 }
 
 form{
@@ -205,7 +191,7 @@ form{
 
 /*INGRED*/
 .ingredient-container {
-    border: 1px solid #ced4da;
+    border: 1px solid #555;
     padding: 10px;
     border-radius: 4px;
 }
@@ -258,7 +244,7 @@ form{
 
 /* Style for the "x" button next to each step input */
 .remove-btn {
-    background-color: #424242;
+    background-color: #555;
     color: #fff;
     border: none;
     border-radius: 4px;

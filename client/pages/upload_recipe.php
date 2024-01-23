@@ -20,7 +20,7 @@
 ?>
 
 
-<link rel="stylesheet" href="./client/assets/css/upload.css">
+<link rel="stylesheet" href="../client/assets/css/upload.css">
 
 <form action="" method="post">
 
@@ -31,25 +31,24 @@
         <hr>
     </div>
     
-    <div class="row">
-        <div class="col-md-6 col-sm-12 recipe-name">
-                <label for="nev">Recept neve:</label>
+
+        <div class="recipe-name">
+                <!--<label for="nev">Recept neve:</label>-->
+                <h2>Recept neve:</h2>
                 <input type="text" id="nev" name="nev" placeholder="Bolognai spagetti" required>
         </div>
 
-        <div class="col-md-6 col-sm-12"></div>
-    </div>
 
     <div class="row">
-        <div class="col-md-6 col-sm-12">
+        <div class="col-md-6 col-sm-12 recipe-detail">
             <div id="drop-container" onclick="triggerFileInput()">
-                <img id="upload-icon" src="./client/assets/img/photo.png" alt="Upload Icon">
+                <img id="upload-icon" src="/client/assets/img/photo.png" alt="Upload Icon">
                 <p>Húzd ide vagy kattints a kép feltöltéséhez</p>
                 <input type="file" id="file-input" accept="image/*" onchange="displayImage(this)">
                 </div>
         </div>
 
-        <div class="col-md-6 col-sm-12">
+        <div class="col-md-6 col-sm-12 recipe-detail">
             <div>
                 <textarea name="short-desc" id="short-desc" placeholder="Ide írhatsz egy max 300 karakteres leírást a receptedről." maxlength="300"></textarea>
             </div>
@@ -58,7 +57,7 @@
     </div>
 
     <div class="divider-container">
-        <h2 class="divider">Kategória</h2>
+        <h2 class="divider-left">Kategória</h2>
         <hr>
     </div>
     <div class="row">
@@ -116,7 +115,7 @@
 
 
     <div class="divider-container">
-        <h2 class="divider">Hozzávalók</h2>
+        <h2 class="divider-left">Hozzávalók</h2>
         <hr>
     </div>
 
@@ -145,7 +144,7 @@
 
 
     <div class="divider-container">
-        <h2 class="divider">Elkészítés</h2>
+        <h2 class="divider-left">Elkészítés</h2>
         <hr>
     </div>
 

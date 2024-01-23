@@ -96,7 +96,7 @@ function format_main_sub_cat_hierarchy($main_cats, $sub_cats) {
 
     return $cat_array;
 }
-
+/*
 //Recept feltöltése
 
 function insert_ingredient($name){
@@ -118,7 +118,7 @@ function insert_food($portion, $name, $description, $img_url, $time_min, $upload
     global $db;
 
     try {
-        $sql="INSERT INTO `food`(`portion`,`name`, `description`, `img_url`, `time_min`, `upload_date` `user_id`) 
+        $sql="INSERT INTO `food`(`portion`,`name`, `description`, `img_url`, `time_min`, `upload_date`, `user_id`) 
         VALUES (:portion, :name, :description, :img_url, :time_min, :upload_date, :user_id)";
         
         $stmt = $db->prepare($sql);
@@ -250,9 +250,10 @@ function upload($ingredient_name, $portion, $food_name, $description, $img_url, 
     for ($i = 0; $i < count($ingredient_ids); $i++) {
         insert_contains_ingredient($ingredient_ids[$i], $unit_id, $quantity, $food_name);
     }
-//fosmég
+
     ($ingredient_id, $unit_id, $quantity, $food_name)
    
 }
+*/
 
 ?>
