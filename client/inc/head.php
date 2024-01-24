@@ -71,7 +71,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="#">Karácsony</a></li>
                             <li><a class="dropdown-item" href="#">Húsvét</a></li>
-                            <li><a class="dropdown-item" href="#">Újév</a></li>
+                            <li><a class="dropdown-item" href="#">Szilveszter</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">

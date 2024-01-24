@@ -1,7 +1,7 @@
 <div class="banner-container">
     <img class="banner-img" src="./client/assets/img/banner1.jpg">
     <div class="text-overlay">
-        <h2 class="banner-txt">Oszd meg az örömöt, ízeld meg a közösség erejét.</h2>
+        <h2 class="banner-txt">Oszd meg az örömöt, ízleld meg a közösség erejét.</h2>
     </div>
 </div>
 

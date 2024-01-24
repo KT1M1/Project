@@ -61,7 +61,7 @@
 
 .card-div:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle box shadow for the popping effect */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .card-div {
@@ -72,8 +72,8 @@
     padding: 10px;
     margin: 10px;
     max-width: 600px;
-    border: #377E47 1px solid;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /*Transition*/
+    border: #000 1px solid;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-text {
