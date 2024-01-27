@@ -3,4 +3,5 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^login$ /client/pages/login.php [L]
 RewriteRule ^logout$ /client/pages/logout.php [L]
+RewriteRule ^page/show_recipe/([^/]+)$ index.php?page=show_recipe&id=$1 [L]
 RewriteRule ^page/([^/]+)$ index.php?page=$1 [L]

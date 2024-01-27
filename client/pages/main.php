@@ -21,21 +21,23 @@
     <div class="row popular">
     <!--Rank 1-->
         <div class="col-12 col-sm-6 col-lg-4">
-            <div class="card-div">
-                <div class="rank-cube">#1</div>
-                <div class="card-top">
-                    <img class="card-pic" src="./client/assets/img/bolognese.jpg" alt="">
-                </div>
-                <div class="card-bottom">
-                    <div class="card-text">
-                        <p>Bolognai Spagetti</p>
+            <a href="page/show_recipe/7">
+                <div class="card-div">
+                    <div class="rank-cube">#1</div>
+                    <div class="card-top">
+                        <img class="card-pic" src="./client/assets/img/bolognese.jpg" alt="">
                     </div>
-                    <div  class="card-rate">
-                        <img class="img-fluid card-heart" src="./client/assets/img/heart.png" alt="" srcset="">
-                        <p class="card-heart">20</p>
+                    <div class="card-bottom">
+                        <div class="card-text">
+                            <p>Bolognai Spagetti Egyszerűen</p>
+                        </div>
+                        <div  class="card-rate">
+                            <img class="img-fluid card-heart" src="./client/assets/img/heart.png" alt="" srcset="">
+                            <p class="card-heart">20</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
     <!--Rank 2-->
         <div class="col-12 col-sm-6 col-lg-4">

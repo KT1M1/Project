@@ -1,5 +1,7 @@
 .recipe-body{
-    margin-top: 2rem;
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+    padding: 0;
 }
 
 .main-col{
@@ -20,6 +22,13 @@
 .heart-img{
     width: 30px;
     height: 30px;
+    margin-right: 1rem;
+}
+
+.heart-container{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
 }
 
 .recipe-name{
@@ -55,7 +64,7 @@
 
 .space{
     margin-top: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     text-align: center;
 }
 
@@ -72,6 +81,10 @@
 
 .ingredient-container{
     padding-right: 0;
+}
+
+.ing-lbl{
+    font-size: 20px;
 }
 
 /*Steps*/
@@ -95,7 +108,7 @@
     margin-left: 1rem;
 }
 
-.h1-step{
+.h1-step, .h2-step{
     padding-left: 1rem;
 }
 
