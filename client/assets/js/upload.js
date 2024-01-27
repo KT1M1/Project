@@ -48,8 +48,6 @@ displayMainCategory();
 
 
 
-
-
 function triggerFileInput() {
     document.getElementById('file-input').click();
 }
@@ -87,10 +85,10 @@ function addIngredient() {
     newIngredient.className = "hozzavalo-div";
     newIngredient.innerHTML = `
         <label class="hozzavalo-lbl">Hozzávaló:</label>
-        <input type="text" class="hozzavalo" name="hozzavalo_nev[]" required>
-
+        <input type="text" class="hozzavalo" name="ingredient_name[]" required>
+        
         <label class="hozzavalo-lbl">Mennyiség:</label>
-        <input type="number" class="hozzavalo" name="hozzavalo_mennyiseg[]" min="1" required>
+        <input type="number" class="hozzavalo" name="ingredient_quantity[]" min="1" required>
 
         ${units_template}
 
@@ -104,7 +102,7 @@ function addStep() {
     var newStep = document.createElement("div");
     newStep.className = "lepes-div";
     newStep.innerHTML = `
-        <input type="text" class="lepes lepes-x" name="lepes[]" required>
+        <input type="text" class="lepes lepes-x" name="step[]" required>
         <button type="button" class="remove-btn" onclick="removeElement(this)">x</button>
     `;
 

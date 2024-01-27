@@ -124,8 +124,6 @@ input#nev{
     border-radius: 8px;
 }
 
-
-
 /*Diet, Intolerance*/
 .diet-container{
     display: flex;
@@ -213,6 +211,8 @@ form{
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    width: 200px;
+    height: 40px;
 }
 
 
@@ -259,3 +259,7 @@ form{
     background-color: #e60000;
 }
 
+.submit-div{
+    margin-top: 2rem;
+    text-align: center;
+}

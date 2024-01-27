@@ -175,7 +175,10 @@
     <!-- Új lépés mezők hozzáadása gomb -->
     <button type="button" class="add-btn" onclick="addStep()">Lépés hozzáadás</button>
         
-   <input type="submit" value="Recept feltöltése">
+    <div class="submit-div">
+        <input class="add-btn" type="submit" value="Recept feltöltése">
+   </div>
+
 </div>
 
 <input type="hidden" name="upload" value="1">
@@ -184,7 +187,7 @@
 <script>
     categories = <?php echo json_encode($cat_hierarchy); ?>;
 
-    units_template = `<select class="hozzavalo hozzavalo-lbl" name="hozzavalo_mertekegyseg[]">
+    units_template = `<select class="hozzavalo hozzavalo-lbl" name="ingredient_unit[]">
                     <option selected="true" disabled="disabled">Mértékegység:</option>
                     <?php
                     foreach ($units as $unit) {
