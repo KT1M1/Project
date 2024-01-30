@@ -1,9 +1,18 @@
-input, select, .allergen-lbl{
+.col-sm-12 {
+    margin-top: 2rem;
+}
+
+select,
+.allergen-lbl {
     margin-bottom: 1rem;
     display: inline-block;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+option:hover {
+    background-color: #377E47;
 }
 
 #drop-container {
@@ -16,37 +25,31 @@ input, select, .allergen-lbl{
     padding: 1rem;
     cursor: pointer;
     height: 30vh;
-  }
+}
 
-  #drop-container:hover {
+#drop-container:hover {
     border-color: #555;
-  }
+}
 
-  #drop-container img {
+#drop-container img {
     max-width: 100%;
     max-height: 300px;
     display: block;
     margin: 10px auto;
-  }
+}
 
-  #file-input {
-    display: none;
-  }
+#file-input {  /*Cannot be hidden or gives error*/
+    position: absolute;
+    left: -9999px;
+}
 
-  #upload-icon {
-    position: relative;
-    margin-bottom: 10px;
-  }
-
-
-
-header{
+header {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.add-btn{
+.add-btn {
     background-color: #377E47;
     color: #fff;
     border: 0;
@@ -56,46 +59,46 @@ header{
     border-radius: 2px;
 }
 
-.container{
+.container {
     padding: 1rem;
 }
 
-.img-icon{
+.img-icon {
     max-width: 30px;
 }
 
-.f-weight{
+.f-weight {
     font-weight: 400;
 }
 
-.recipe-name{
+.recipe-name {
     display: flex;
     padding: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
-input#nev{
-    margin-left: 1rem;
+input#nev {
+    margin-left: 5px;
     width: 300px;
-}
-
-.recipe-detail{
-    margin-top: 2rem;
+    min-height: 40px;
 }
 
 /*User*/
-.user{
+.user {
     display: flex;
     align-items: center;
     margin-top: 1rem;
 }
 
-.user-pfp{
+.user-pfp {
     max-width: 50px;
     padding: 10px;
     margin-right: 1.5rem;
 }
 
-.user-name{
+.user-name {
     margin: 0;
 }
 
@@ -105,13 +108,13 @@ input#nev{
     align-items: center;
 }
 
-.heart{
+.heart {
     margin: 0px;
     max-width: 40px;
     margin-right: 0.5rem;
 }
 
-.recipe-body{
+.recipe-body {
     padding-top: 2rem;
 }
 
@@ -124,31 +127,39 @@ input#nev{
     border-radius: 8px;
 }
 
+#charCount, #modalBtn {
+    font-size: 0.9em;
+    color: grey;
+    text-align: end;
+}
+
+
 /*Diet, Intolerance*/
-.diet-container{
+.diet-container {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 1rem;
 }
 
-.img-diet{
+.img-diet {
     max-width: 50px;
 }
 
 /*Category*/
-select{
+select {
     width: 70%;
     margin-bottom: 10px;
     padding: 5px;
     border: 1px solid #555;
 }
 
-select#ido{
+select#ido {
     width: fit-content;
 }
 
-input#hozzavalo_adag, input#ido{
+input#hozzavalo_adag,
+input#ido {
     text-align: center;
     width: 5rem;
     padding: 4px;
@@ -161,29 +172,45 @@ input#hozzavalo_adag, input#ido{
     }
 }
 
+.portion-div {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.portion-col {
+    text-align: end;
+}
+
+/*Adjust text alignment where columns stack vertically*/
+@media (max-width: 767px) {
+    .portion-col {
+        text-align: start;
+    }
+}
+
 /*Allergen*/
 .allergen-lbl {
-    margin-bottom: 10px;
+    margin-right: 5px;
     padding: 5px;
     border: 1px solid #555;
+    cursor: pointer;
 }
 
 input[type="checkbox"] {
     display: none;
 }
 
-input[type="checkbox"]:checked + label {
+input[type="checkbox"]:checked+label {
     background-color: #377E47;
     color: #fff
 }
 
-form{
+form {
     display: flex;
     justify-content: space-evenly;
 }
 
-.allergen-container{
-    margin-top: 1rem;
+.allergen-div {
     margin-bottom: 1rem;
 }
 
@@ -194,7 +221,7 @@ form{
     border-radius: 4px;
 }
 
-.hozzavalo-div{
+.hozzavalo-div {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -205,7 +232,7 @@ form{
     justify-content: center;
 }
 
-.hozzavalo{
+.hozzavalo {
     margin-bottom: 1rem;
     display: inline-block;
     padding: 8px;
@@ -222,14 +249,14 @@ form{
 }
 
 /*Steps*/
-.lepes-div{
+.lepes-div {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
 }
 
-.lepes{
+.lepes {
     margin-bottom: 1rem;
     width: 100%;
     display: inline-block;
@@ -249,7 +276,7 @@ form{
     border: none;
     border-radius: 4px;
     padding: 8px;
-    padding-left: 12px; 
+    padding-left: 12px;
     padding-right: 12px;
     margin-left: 8px;
     font-size: 16px;
@@ -259,7 +286,86 @@ form{
     background-color: #e60000;
 }
 
-.submit-div{
+.submit-div {
     margin-top: 2rem;
     text-align: center;
+}
+
+/*Tooltip*/
+.tooltip {
+    opacity: 1;
+    z-index: 1;
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted #000;
+    margin: 1rem;
+    cursor: help;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 110%;
+    transform: translateY(-50%);
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/*Modal*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.modal-Btn-div {
+    text-align: end;
+}
+
+#modalBtn {
+    border: none;
+    background: none;
+}
+
+.close {
+    text-align: right;
+    font-size: 28px;
+    font-weight: bold;
+
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.how-img-div {
+    text-align: end;
 }

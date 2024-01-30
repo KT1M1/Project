@@ -249,7 +249,7 @@ function upload_recipe($food_name, $img_url, $description, $category_ids, $porti
    
 }
 
-const MAX_FILE_SIZE_MB = 5;
+const MAX_FILE_SIZE_MB = 1;
 function image_uploader($name, $tmp_name, $size) {
     $targetDir = "uploads/imgs/";
     $uploadedFileName = basename($name);
