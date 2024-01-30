@@ -28,7 +28,9 @@ $steps = get_steps_for_recipe($recipe_data['id']);
             </div>
         </div>
         <div class="col-md-5 col-sm-12 description-container">
-            <h2 class="recipe-name"><?php echo $recipe_data['name']; ?></h2>
+            <h2 class="recipe-name">
+                <?php echo $recipe_data['name']; ?>
+            </h2>
             <div class="category-container">
                 <?php
                 foreach($categories as $category) {
@@ -38,15 +40,21 @@ $steps = get_steps_for_recipe($recipe_data['id']);
                 <hr>
             </div>
             <div>
-                <p><?php echo $recipe_data['description']; ?></p>
+                <p>
+                    <?php echo $recipe_data['description']; ?>
+                </p>
             </div>
         </div>
     </div>
 
     <div class="row details-row">
         <div class="col-md-6 col-sm-12 space">
-            <p>Hozzávalók <?php echo $recipe_data['portion']; ?> adaghoz</p>
-            <p>Elkészítési idő: <?php echo $recipe_data['time_min']; ?> perc</p>
+            <p>Hozzávalók
+                <?php echo $recipe_data['portion']; ?> adaghoz
+            </p>
+            <p>Elkészítési idő:
+                <?php echo $recipe_data['time_min']; ?> perc
+            </p>
         </div>
         <div class="col-md-6 col-sm-12 space allergen-container">
             <?php
@@ -89,57 +97,60 @@ $steps = get_steps_for_recipe($recipe_data['id']);
                 ?>
         </div>
 
-    <!--Similar Recipes-->
-    <div>
-        <div class="divider-container">
-            <h2 class="divider-left">Hasonló receptek</h2>
-            <hr>
-        </div>
+        <!--Similar Recipes-->
         <div>
-            <p>Tekintsd meg az aktuális recept mellett elérhető további hasonló recepteket is! Fedezd fel ezeket az
-                alternatív változatokat, és kóstold meg őket, ha az aktuális recept tetszett.
-                A hasonló receptek új ízkombinációkkal és variációkkal szolgálnak, így garantáltan megtalálod a saját
-                ízlésednek leginkább megfelelőt. Ne hagyd ki a lehetőséget, hogy kibővítsd a kulináris élményeidet, és
-                élvezd az új gasztronómiai felfedezéseket!
-            </p>
-        </div>
+            <div class="divider-container">
+                <h2 class="divider-left">Hasonló receptek</h2>
+                <hr>
+            </div>
+            <div>
+                <p>Tekintsd meg az aktuális recept mellett elérhető további hasonló recepteket is! Fedezd fel ezeket az
+                    alternatív változatokat, és kóstold meg őket, ha az aktuális recept tetszett.
+                    A hasonló receptek új ízkombinációkkal és variációkkal szolgálnak, így garantáltan megtalálod a
+                    saját
+                    ízlésednek leginkább megfelelőt. Ne hagyd ki a lehetőséget, hogy kibővítsd a kulináris élményeidet,
+                    és
+                    élvezd az új gasztronómiai felfedezéseket!
+                </p>
+            </div>
 
-        <div class="row popular">
-            <!--First Column-->
-            <div class="col-12 col-sm-6 col-lg-4">
-                <div class="card-div">
-                    <div class="card-top">
-                        <img class="card-pic" src="/client/assets/img/bolognese.jpg" alt="">
-                    </div>
-                    <div class="card-bottom">
-                        <div class="card-text">
-                            <p>Bolognai Spagetti</p>
+            <div class="row popular">
+                <!--First Column-->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="card-div">
+                        <div class="card-top">
+                            <img class="card-pic" src="/client/assets/img/bolognese.jpg" alt="">
+                        </div>
+                        <div class="card-bottom">
+                            <div class="card-text">
+                                <p>Bolognai Spagetti</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!--Second Column-->
-            <div class="col-12 col-sm-6 col-lg-4">
-                <div class="card-div">
-                    <div class="card-top">
-                        <img class="card-pic" src="/client/assets/img/bolognese.jpg" alt="">
-                    </div>
-                    <div class="card-bottom">
-                        <div class="card-text">
-                            <p>Bolognai Spagetti</p>
+                <!--Second Column-->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="card-div">
+                        <div class="card-top">
+                            <img class="card-pic" src="/client/assets/img/bolognese.jpg" alt="">
+                        </div>
+                        <div class="card-bottom">
+                            <div class="card-text">
+                                <p>Bolognai Spagetti</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!--Third Column-->
-            <div class="col-12 col-sm-6 col-lg-4">
-                <div class="card-div">
-                    <div class="card-top">
-                        <img class="card-pic" src="/client/assets/img/bolognese.jpg" alt="">
-                    </div>
-                    <div class="card-bottom">
-                        <div class="card-text">
-                            <p>Bolognai Spagetti</p>
+                <!--Third Column-->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="card-div">
+                        <div class="card-top">
+                            <img class="card-pic" src="/client/assets/img/bolognese.jpg" alt="">
+                        </div>
+                        <div class="card-bottom">
+                            <div class="card-text">
+                                <p>Bolognai Spagetti</p>
+                            </div>
                         </div>
                     </div>
                 </div>
