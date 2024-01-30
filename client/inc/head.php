@@ -7,22 +7,23 @@
                 <a class="brand" href="/">RecipeShare</a>
             </h1>
             
-            <div class="input-group">
-                <input type="text" class="form-control d-none d-lg-block" placeholder="Keresés..." />
-                <button class="btn search-icon" type="button">
+            <div class="input-group custom-search-group">
+                <input type="text" class="search-field d-none d-lg-block" placeholder="Keresés..." />
+                <button class="btn nav-btn search-icon" type="button">
                     <img class="img-icon" src="/client/assets/img/search.png" alt="">
                 </button>
             </div>
 
+
             <div>
-                <button class="btn" type="button">
+                <button class="btn nav-btn" type="button">
                     <a href="/page/profile">
                         <img class="img-icon" src="/client/assets/img/user.png" alt="">
                     </a>
                 </button>
             </div>
             
-            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="btn nav-btn navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <img class="img-icon" src="/client/assets/img/menu-burger.png" alt="">
             </button>
         </header>

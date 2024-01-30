@@ -85,21 +85,16 @@ header{
 }
 
 .img-icon{
-    max-width: 30px;
-    width: calc(20px + 0.4vw); /* Making the texts responsive. */
+    width: 25px;
+}
+
+.search-field{
+    border: 1px solid #ced4da;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0;
 }
 
 /*Navbar*/
-
-/*Adjusting the Bootstrap default styles slightly*/
-.btn-check:focus+.btn, .btn:focus {
-    box-shadow: 0 0 0 0.25rem rgb(0 0 0 / 25%);
-}
-.form-control:focus {
-    box-shadow: 0 0 0 0.25rem rgb(0 0 0 / 25%);
-    border-color: #121212;
-}
-
 .dropdown-item.active, .dropdown-item:active {
     background-color: #121212;
 }
@@ -114,8 +109,8 @@ a.nav-link {
     color: white;
 }
 
-a.nav-link:hover, a.nav-link:focus {
-    color: #444444;
+a.nav-link:hover, a.nav-link:focus{
+    color: #121212;
 }
 
 a.brand {
@@ -135,18 +130,24 @@ a.brand {
     width: 100%;
 }
 
-.navbar-toggler:focus {
-    box-shadow: 1px 2px 2px 2px rgb(66, 66, 66);
-}
-
-
 /*Searchbar*/
 .input-group {
+    border: 1px solid #ced4da;
+    border-radius: 0;
     width: auto;
+    align-content: center;
+    height: 40px;
 }
 
-.form-control {
+.search-field {
     max-width: 200px;
+}
+
+.search-icon:focus, .search-field:focus-visible, .search-field:focus, .navbar-toggler:focus, .nav-btn:focus{
+    border-color: #121212;
+    box-shadow: none;
+    outline: black auto 1px;
+    border-radius: 0;
 }
 
 /*Footer*/
@@ -164,5 +165,4 @@ footer a {
     color: white;
     text-decoration: underline;
 }
-
 

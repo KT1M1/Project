@@ -163,11 +163,11 @@
         <div class="col-12 col-md-6">
             <div class="card-div">
                 <div class="card-top">
-                    <img class="card-pic" src="./client/assets/img/vegangranola.jpg" alt="">
+                    <img class="card-pic" src="./client/assets/img/caprese.jpg" alt="">
                 </div>
                 <div class="card-bottom">
                     <div class="card-text">
-                        <p>Granola Kelyhek</p>
+                        <p>Caprese szendvics</p>
                     </div>
                 </div>
             </div>
