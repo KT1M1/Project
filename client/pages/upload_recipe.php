@@ -242,4 +242,5 @@
                     ?>
                 </select>`;
 </script>
+<script src="/client/assets/js/display_category.js"></script>
 <script src="/client/assets/js/upload.js"></script>

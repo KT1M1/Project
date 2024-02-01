@@ -1,0 +1,86 @@
+/*Filter*/
+.filter-container {
+    position: fixed;
+    left: 0;
+    margin-top: 20px;
+    width: 50%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+    z-index: 2;
+}
+
+.filter-button {
+    position: fixed;
+    z-index: 3;
+}
+
+.filter-container.is-visible {
+    transform: translateX(0%);
+}
+
+.filter-img {
+    width: 20px;
+}
+
+.close-filter {
+    float: right;
+    background: #555555;
+    color: #fff;
+}
+
+.sort-div {
+    margin-bottom: 20px;
+}
+
+select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #555;
+}
+
+
+/*Allergen*/
+.allergen-div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.allergen-lbl {
+    display: inline-block;
+    background-color: #fff;
+    border: 2px solid #555;
+    color: #000000;
+    border-radius: 25px;
+    margin: 3px;
+    cursor: pointer;
+    padding: 8px 12px;
+}
+
+.cboxtags div {
+    display: inline-block;
+}
+
+.cboxtags input[type="checkbox"] {
+    display: none;  /*Hide the checkbox*/
+}
+
+.cboxtags input[type="checkbox"]:checked+label {
+    border-color: #555;
+    background-color: #377E47;
+    color: #fff;
+}
+
+.cboxtags label::before {
+    content: "\2713";   /*Checkmark unicode*/
+    display: none;
+    margin-right: 8px;
+}
+
+.cboxtags input[type="checkbox"]:checked+label::before {
+    display: inline-block;
+}
