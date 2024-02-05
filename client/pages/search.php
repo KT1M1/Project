@@ -16,7 +16,6 @@
 <div>
     <button class="filter-button">
         <img class="filter-img" src="/client/assets/img/filter.png" alt="filter">
-        Szűrő
     </button>
 </div>
 
@@ -72,7 +71,17 @@
             </div>
         </div>
 
+        <div class="search-btn-div">
+            <button id="search-button">Search</button>
+        </div>
     </div>
+
+    <div id="selected-filters">
+        <h3>Selected Filters:</h3>
+        <ul id="filter-list"></ul>
+    </div>
+
+
     <!--First Row-->
     <div class="row">
         <div class="col-12 col-md-6">
@@ -147,6 +156,77 @@
             filterContainer.classList.remove('is-visible');
         });
     });
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const searchButton = document.getElementById('search-button');
+
+        if (searchButton) {
+            searchButton.addEventListener('click', function () {
+                const filterList = document.getElementById('filter-list');
+                filterList.innerHTML = '';
+
+                // Handle category filters
+                document.querySelectorAll('select[name="category[]"]').forEach(select => {
+                    const selectedText = select.options[select.selectedIndex].text;
+                    const selectedValue = select.value;
+                    console.log(`Selected Category: ${selectedText}, Value: ${selectedValue}`);
+
+                    if (!select.options[select.selectedIndex].disabled) {
+                        const label = document.createElement('label');
+                        label.className = 'filter-checkbox';
+
+                        const checkbox = document.createElement('input');
+                        checkbox.type = 'checkbox';
+                        checkbox.checked = true;
+                        checkbox.setAttribute('data-value', selectedValue);
+                        checkbox.onchange = function () {
+                            if (!this.checked) {
+                                this.parentNode.parentNode.removeChild(this.parentNode);
+                            }
+                            //Continue here
+                        };
+
+                        label.appendChild(checkbox);
+                        const textNode = document.createTextNode(` ${selectedText} \u2715 `);
+                        label.appendChild(textNode);
+
+                        filterList.appendChild(label);
+                    }
+                });
+
+                // Handle allergen filters
+                document.querySelectorAll('input[name="allergen[]"]:checked').forEach(checkbox => {
+                    const allergenText = checkbox.nextElementSibling.textContent;
+                    const allergenValue = checkbox.value;
+                    console.log(`Selected Allergen: ${allergenText}, Value: ${allergenValue}`);
+
+                    const label = document.createElement('label');
+                    label.className = 'filter-checkbox';
+
+                    const newCheckbox = document.createElement('input');
+                    newCheckbox.type = 'checkbox';
+                    newCheckbox.checked = true;
+                    newCheckbox.setAttribute('data-value', allergenValue);
+                    newCheckbox.onchange = function () {
+                        if (!this.checked) {
+                            this.parentNode.parentNode.removeChild(this.parentNode);
+                        }
+                        // filter removal 
+                    };
+
+                    label.appendChild(newCheckbox);
+                    const textNode = document.createTextNode(` ${allergenText} \u2715 `);
+                    label.appendChild(textNode);
+
+                    filterList.appendChild(label);
+                });
+            });
+        }
+    });
+
+
+
 
 
 </script>

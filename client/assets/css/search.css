@@ -2,11 +2,11 @@
 .filter-container {
     position: fixed;
     left: 0;
-    margin-top: 20px;
-    width: 50%;
+    margin-top: 60px;
+    max-width: 600px;
     padding: 20px;
-    background-color: white;
-    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+    background-color: #fff;
+    box-shadow: none;
     transform: translateX(-100%);
     transition: transform 0.5s ease;
     z-index: 2;
@@ -15,10 +15,19 @@
 .filter-button {
     position: fixed;
     z-index: 3;
+    flex-direction: row;
+    margin: 15px;
+    border: #fff;
+    border-radius: 50%;
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.25);
+    background: #fff;
+    height: 50px;
+    width: 50px;
 }
 
 .filter-container.is-visible {
     transform: translateX(0%);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
 .filter-img {
@@ -27,7 +36,7 @@
 
 .close-filter {
     float: right;
-    background: #555555;
+    background: #555;
     color: #fff;
 }
 
@@ -40,6 +49,21 @@ select {
     margin-bottom: 10px;
     padding: 5px;
     border: 1px solid #555;
+}
+
+.search-btn-div {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+#search-button {
+    background-color: #377E47;
+    color: #fff;
+    border: 0;
+    padding: 0.5rem 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 2px;
 }
 
 
@@ -65,8 +89,8 @@ select {
     display: inline-block;
 }
 
-.cboxtags input[type="checkbox"] {
-    display: none;  /*Hide the checkbox*/
+input[type="checkbox"] {
+    display: none;  /*Hide all checkbox*/
 }
 
 .cboxtags input[type="checkbox"]:checked+label {
@@ -76,11 +100,27 @@ select {
 }
 
 .cboxtags label::before {
-    content: "\2713";   /*Checkmark unicode*/
+    content: "\2713";
+    /*Checkmark unicode*/
     display: none;
     margin-right: 8px;
 }
 
 .cboxtags input[type="checkbox"]:checked+label::before {
     display: inline-block;
+}
+
+/*Page's design*/
+#selected-filters {
+    margin-top: 70px;
+}
+
+.filter-checkbox {
+    background-color: #377E47;
+    border: 2px solid #555;
+    color: #fff;
+    border-radius: 25px;
+    margin: 3px;
+    cursor: pointer;
+    padding: 8px 12px;
 }
