@@ -54,6 +54,10 @@
     padding: 0;
 }
 
+.img-fluid{
+    width: 100%;
+}
+
 /*Allergen*/
 .details-row{
     border: 1px solid #377E47;

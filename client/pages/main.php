@@ -1,3 +1,13 @@
+<?php
+require_once("./server/show.php");
+
+// Fetch the recipe data for recipes with IDs 13, 14, and 15
+$recipe_data_13 = get_recipe_by_id(13)[0];
+$recipe_data_14 = get_recipe_by_id(14)[0];
+$recipe_data_15 = get_recipe_by_id(15)[0];
+?>
+
+
 <div class="banner-container">
     <img class="banner-img" src="./client/assets/img/banner1.jpg">
     <div class="text-overlay">
@@ -20,18 +30,21 @@
         </div>
     </div>
 
+
     <div class="row popular">
-        <!--Rank 1-->
+        <!--Rank 1 (ID 13)-->
         <div class="col-12 col-sm-6 col-lg-4">
-            <a href="page/show_recipe/13">
+            <a href="page/show_recipe/<?php echo $recipe_data_13['id']; ?>">
                 <div class="card-div">
                     <div class="rank-cube">#1</div>
                     <div class="card-top">
-                        <img class="card-pic" src="./client/assets/img/bolognese.jpg">
+                        <img class="card-pic" src="/uploads/imgs/<?php echo $recipe_data_13['img_url']; ?>">
                     </div>
                     <div class="card-bottom">
                         <div class="card-text">
-                            <p>Bolognai Spagetti Egyszerűen</p>
+                            <p>
+                                <?php echo $recipe_data_13['name']; ?>
+                            </p>
                         </div>
                         <div class="card-rate">
                             <img class="img-fluid card-heart" src="./client/assets/img/heart.png">
@@ -41,41 +54,49 @@
                 </div>
             </a>
         </div>
-        <!--Rank 2-->
+        <!--Rank 2 (ID 14)-->
         <div class="col-12 col-sm-6 col-lg-4">
-            <div class="card-div">
-                <div class="rank-cube">#2</div>
-                <div class="card-top">
-                    <img class="card-pic" src="./client/assets/img/bolognese.jpg">
-                </div>
-                <div class="card-bottom">
-                    <div class="card-text">
-                        <p>Gyors Bolognai Spagetti</p>
+            <a href="page/show_recipe/<?php echo $recipe_data_14['id']; ?>">
+                <div class="card-div">
+                    <div class="rank-cube">#2</div>
+                    <div class="card-top">
+                        <img class="card-pic" src="/uploads/imgs/<?php echo $recipe_data_14['img_url']; ?>">
                     </div>
-                    <div class="card-rate">
-                        <img class="img-fluid card-heart" src="./client/assets/img/heart.png">
-                        <p class="card-heart">18</p>
+                    <div class="card-bottom">
+                        <div class="card-text">
+                            <p>
+                                <?php echo $recipe_data_14['name']; ?>
+                            </p>
+                        </div>
+                        <div class="card-rate">
+                            <img class="img-fluid card-heart" src="./client/assets/img/heart.png">
+                            <p class="card-heart">18</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
-        <!--Rank 3-->
+        <!--Rank 3 (ID 15)-->
         <div class="col-12 col-sm-6 col-lg-4">
-            <div class="card-div">
-                <div class="rank-cube">#3</div>
-                <div class="card-top">
-                    <img class="card-pic" src="./client/assets/img/bolognese.jpg">
-                </div>
-                <div class="card-bottom">
-                    <div class="card-text">
-                        <p>Könnyű Bolognai Spagetti</p>
+            <a href="page/show_recipe/<?php echo $recipe_data_15['id']; ?>">
+                <div class="card-div">
+                    <div class="rank-cube">#3</div>
+                    <div class="card-top">
+                        <img class="card-pic" src="/uploads/imgs/<?php echo $recipe_data_15['img_url']; ?>">
                     </div>
-                    <div class="card-rate">
-                        <img class="img-fluid card-heart" src="./client/assets/img/heart.png">
-                        <p class="card-heart">13</p>
+                    <div class="card-bottom">
+                        <div class="card-text">
+                            <p>
+                                <?php echo $recipe_data_15['name']; ?>
+                            </p>
+                        </div>
+                        <div class="card-rate">
+                            <img class="img-fluid card-heart" src="./client/assets/img/heart.png">
+                            <p class="card-heart">13</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </div>
@@ -136,19 +157,24 @@
         </div>
         <!--IMG-->
         <div class="col-12 col-md-6">
-            <div class="card-div">
-                <div class="card-top">
-                    <img class="card-pic" src="./client/assets/img/bologna.jpg">
-                </div>
-                <div class="card-bottom">
-                    <div class="card-text">
-                        <p>Bolognai Spagetti</p>
+            <a href="page/show_recipe/<?php echo $recipe_data_13['id']; ?>">
+                <div class="card-div">
+                    <div class="card-top">
+                        <img class="card-pic" src="/uploads/imgs/<?php echo $recipe_data_13['img_url']; ?>">
+                    </div>
+                    <div class="card-bottom">
+                        <div class="card-text">
+                            <p>
+                                <?php echo $recipe_data_13['name']; ?>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </div>
+
 <!--Snack-->
 <div class="container">
     <div class="container-fluid">
@@ -172,16 +198,20 @@
         </div>
         <!--IMG-->
         <div class="col-12 col-md-6">
-            <div class="card-div">
-                <div class="card-top">
-                    <img class="card-pic" src="./client/assets/img/caprese.jpg">
-                </div>
-                <div class="card-bottom">
-                    <div class="card-text">
-                        <p>Caprese szendvics</p>
+            <a href="page/show_recipe/<?php echo $recipe_data_15['id']; ?>">
+                <div class="card-div">
+                    <div class="card-top">
+                        <img class="img-fluid card-pic" src="/uploads/imgs/<?php echo $recipe_data_15['img_url']; ?>">
+                    </div>
+                    <div class="card-bottom">
+                        <div class="card-text">
+                            <p>
+                                <?php echo $recipe_data_15['name']; ?>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </div>
@@ -210,16 +240,19 @@
         </div>
         <!--IMG-->
         <div class="col-12 col-md-6">
-            <div class="card-div">
-                <div class="card-top">
-                    <img class="card-pic" src="./client/assets/img/csokisbrownie.jpg">
-                </div>
-                <div class="card-bottom">
-                    <div class="card-text">
-                        <p>Csokis Brownie</p>
+            <a href="page/show_recipe/<?php echo $recipe_data_14['id']; ?>">
+                <div class="card-div">
+                    <div class="card-top">
+                        <img class="card-pic" src="/uploads/imgs/<?php echo $recipe_data_14['img_url']; ?>">
+                    </div>
+                    <div class="card-bottom">
+                        <div class="card-text">
+                            <p>
+                                <?php echo $recipe_data_14['name']; ?>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
             </a>
         </div>
     </div>

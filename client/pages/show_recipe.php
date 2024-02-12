@@ -15,18 +15,6 @@ $steps = get_steps_for_recipe($recipe_data['id']);
 <div class="container recipe-body">
 
     <div class="row main-col">
-        <div class="col-md-7 col-sm-12 img-col">
-            <img class="img-fluid" src="/uploads/imgs/<?php echo $recipe_data['img_url']; ?>">
-            <div class="small-detail-container">
-                <div>
-                    <p>Kis Tímea - 2023-12-20</p>
-                </div>
-                <div class="heart-container">
-                    <img class="heart-img" src="/client/assets/img/heart.png" alt="" srcset="">
-                    <p>23</p>
-                </div>
-            </div>
-        </div>
         <div class="col-md-5 col-sm-12 description-container">
             <h2 class="recipe-name">
                 <?php echo $recipe_data['name']; ?>
@@ -43,6 +31,18 @@ $steps = get_steps_for_recipe($recipe_data['id']);
                 <p>
                     <?php echo $recipe_data['description']; ?>
                 </p>
+            </div>
+        </div>
+        <div class="col-md-7 col-sm-12 img-col">
+            <img class="img-fluid" src="/uploads/imgs/<?php echo $recipe_data['img_url']; ?>">
+            <div class="small-detail-container">
+                <div>
+                    <p>Kis Tímea - 2023-12-20</p>
+                </div>
+                <div class="heart-container">
+                    <img class="heart-img" src="/client/assets/img/heart.png" alt="" srcset="">
+                    <p>23</p>
+                </div>
             </div>
         </div>
     </div>
