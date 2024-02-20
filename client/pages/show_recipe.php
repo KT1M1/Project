@@ -66,7 +66,7 @@ $steps = get_steps_for_recipe($recipe_data['id']);
     </div>
 
     <div class="row">
-        <div class="col-md-4 col-sm-12 ingredient-container" id="ingredientList">
+        <div class="col-lg-4 col-md-12 ingredient-container" id="ingredientList">
             <h1 class="h1-border">Hozzávalók:</h1>
             <?php
                 $counter = 1; //Initialize a counter for unique checkbox IDs
@@ -81,7 +81,7 @@ $steps = get_steps_for_recipe($recipe_data['id']);
             ?>
         </div>
 
-        <div class="col-md-8 col-sm-12 step-container">
+        <div class="col-lg-8 col-md-12 step-container">
             <h1 class="h1-border h1-step">Elkészítés:</h1>
 
             <?php

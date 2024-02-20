@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-4 sm-12 profile-col">
-            <img class="img-fluid pfp" src="/client/assets/img/pfp2.jpg" alt="">
+            <img class="img-fluid pfp" src="/client/assets/img/default.jpg" alt="">
         </div>
 
         <div class="col-lg-4 sm-12 profile-col">

@@ -7,8 +7,7 @@
                 <a class="brand" href="/">RecipeShare</a>
             </h1>
             
-            <div class="input-group custom-search-group">
-                <input type="text" class="search-field d-none d-lg-block" placeholder="Keresés..." />
+            <div>
                 <button class="btn nav-btn search-icon" type="button">
                     <img class="img-icon" src="/client/assets/img/search.png" alt="">
                 </button>
@@ -55,13 +54,12 @@
             <!--2. DROPDOWN-->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Hozzávaló
+                        Elkészítés
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#ingredients">Hús ételek</a></li>
-                            <li><a class="dropdown-item" href="#ingredients">Tenger gyümölcsei</a></li>
-                            <li><a class="dropdown-item" href="#ingredients">Tészta ételek</a></li>
-                            <li><a class="dropdown-item" href="#ingredients">Vegetáriánus vagy Vegán ételek</a></li>
+                            <li><a class="dropdown-item" href="#ingredients">Könnyű</a></li>
+                            <li><a class="dropdown-item" href="#ingredients">Közepes</a></li>
+                            <li><a class="dropdown-item" href="#ingredients">Nehéz</a></li>
                         </ul>
                     </li>
             <!--3. DROPDOWN-->
@@ -73,10 +71,8 @@
                             <li><a class="dropdown-item" href="#">Karácsony</a></li>
                             <li><a class="dropdown-item" href="#">Húsvét</a></li>
                             <li><a class="dropdown-item" href="#">Szilveszter</a></li>
+                            <li><a class="dropdown-item" href="#">Születésnap</a></li>
                         </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#popular">Rólunk</a>
                     </li>
                 </ul>
 

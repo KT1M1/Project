@@ -85,6 +85,7 @@
 
 .ingredient-container{
     padding-right: 0;
+    padding-bottom: 1rem;
 }
 
 .ing-lbl{
@@ -118,9 +119,33 @@
 
 /*Ingredient*/
 .completed {
-    opacity: 0.6; /* Fakítás */
+    opacity: 0.6;
 }
 
 .h1-border{
     border-bottom: 1px solid;
+}
+
+/* Add Media Query for screens smaller than 992px */
+@media (max-width: 991.98px) {
+
+    .step-container {
+        border-left: none;
+        padding: 1rem;
+    }
+
+    .h1-border{
+        border: none;
+    }
+}
+
+@media (max-width: 574.98px) {
+    .ingredient-container{
+        padding: 10px 10px 20px 40px;
+        border-bottom: 1px solid black;
+    }
+}
+
+.ing-cb:checked {
+    accent-color: #377E47;
 }
