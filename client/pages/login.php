@@ -58,16 +58,14 @@ if (isset($_SESSION['user'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="/client/assets/css/login.css" />
-    <title>Form</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-
     <div class="login-wrap">
         <div class="login-html">
-            <h1 class="page-name">RecipeShare</h1>
+            <a href="/"><h1 class="page-name">RecipeShare</h1></a>
             <input id="tab-1" type="radio" name="tab" class="sign-in" <?php echo $login_checked; ?>><label for="tab-1"
                 class="tab">Bejelentkezés</label>
             <input id="tab-2" type="radio" name="tab" class="sign-up" <?php echo $signin_checked; ?>><label for="tab-2"
@@ -83,16 +81,9 @@ if (isset($_SESSION['user'])) {
                     <input id="pass" name="password" type="password" class="input" data-type="password">
                 </div>
                 <div class="group">
-                    <input id="check" name="stay_signed" type="checkbox" class="check" checked>
-                    <label for="check"><span class="icon"></span> Maradjak bejelentkezve</label>
-                </div>
-                <div class="group">
                     <input type="submit" class="button" value="Bejelentkezés">
                 </div>
                 <div class="hr"></div>
-                <div class="foot-lnk">
-                    <a href="#forgot">Elfelejtette jelszavát?</a>
-                </div>
                 <input type="hidden" name="signin" value="1">
             </form>
 
@@ -121,21 +112,37 @@ if (isset($_SESSION['user'])) {
                     <input type="submit" class="button" value="Regisztráció">
                 </div>
                 <div class="hr"></div>
-                <div class="foot-lnk">
-                    <label for="tab-1">Már regisztrált?</a>
-                </div>
                 <input type="hidden" name="signup" value="1">
             </form>
-            <div style="
-          position: absolute;
-          right: 0;
-      ">
-                <?php
-              echo $message;
-          ?>
-            </div>
         </div>
+        <div class="error" role="alert">
+                <?php echo $message; ?>
+            </div>
     </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var registrationTab = document.getElementById('tab-2');
+    var errorElements = document.querySelectorAll('.error');
+
+    function adjustErrorStyling() {
+        if(registrationTab.checked) {
+            errorElements.forEach(function(errorElement) {
+                errorElement.style.marginTop = '130px';
+            });
+        } else {
+            errorElements.forEach(function(errorElement) {
+                errorElement.style.marginTop = '';
+            });
+        }
+    }
+    registrationTab.addEventListener('change', adjustErrorStyling);
+
+    adjustErrorStyling();
+});
+</script>
+
+
 </body>
 
 </html>

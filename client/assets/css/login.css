@@ -26,6 +26,10 @@ a {
     color: inherit;
     text-decoration: none;
 }
+
+a:hover{
+    color: #c8c8c8;
+}
 .page-name{
     margin-bottom: 40px;
 }
@@ -208,4 +212,9 @@ label.tab, .page-name{
 
 .foot-lnk {
     text-align: center;
+}
+
+.error {
+    position: absolute;
+    color: #8e0e0e;
 }
