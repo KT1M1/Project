@@ -6,9 +6,11 @@ $categories = get_categories_for_recipe($recipe_data['id']);
 $allergens = get_allergens_for_recipe($recipe_data['id']);
 $ingredients = get_ingredients_for_recipe($recipe_data['id']);
 $steps = get_steps_for_recipe($recipe_data['id']);
-
+$user = get_user_data($recipe_data['id']);
+$likes = get_likes($recipe_data['id']);
 ?>
 
+<script src="/client/assets/js/show.js"></script>
 
 <link rel="stylesheet" href="/client/assets/css/show_recipe.css">
 
@@ -37,11 +39,18 @@ $steps = get_steps_for_recipe($recipe_data['id']);
             <img class="img-fluid" src="/uploads/imgs/<?php echo $recipe_data['img_url']; ?>">
             <div class="small-detail-container">
                 <div>
-                    <p>Kis Tímea - 2023-12-20</p>
+                    <p>
+                        <?php echo ($user['user_name']); ?> -
+                        <?php echo ($user['registration_date']); ?>
+                    </p>
                 </div>
                 <div class="heart-container">
-                    <img class="heart-img" src="/client/assets/img/heart.png" alt="" srcset="">
-                    <p>23</p>
+                    <img id="full-heart" class="heart-img" src="/client/assets/img/fullheart.png" alt="Like"
+                        style="display:none;">
+                    <img id="heart" class="heart-img" src="/client/assets/img/heart.png" alt="Unlike">
+                    <p>
+                        <?php echo $likes; ?>
+                    </p>
                 </div>
             </div>
         </div>
@@ -158,5 +167,3 @@ $steps = get_steps_for_recipe($recipe_data['id']);
         </div>
     </div>
 </div>
-
-<script src="/client/assets/js/show.js"></script>

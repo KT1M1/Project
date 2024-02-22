@@ -13,3 +13,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    var fullHeart = document.getElementById('full-heart');
+    var emptyHeart = document.getElementById('heart');
+
+    emptyHeart.addEventListener('click', function () {
+        fullHeart.style.display = 'block';
+        emptyHeart.style.display = 'none';
+    });
+
+    fullHeart.addEventListener('click', function () {
+        fullHeart.style.display = 'none';
+        emptyHeart.style.display = 'block';
+    });
+});

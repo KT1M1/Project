@@ -84,4 +84,35 @@ function get_steps_for_recipe($id) {
     return $result;
 }
 
-?>
+function get_user_data($id) {
+    global $db;
+    
+    $stmt = $db->prepare(
+        'SELECT user.user_name, user.registration_date
+        FROM food
+        LEFT JOIN user ON food.user_id = user.id
+        WHERE food.id = :id'
+    );
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
+function get_likes($id) {
+    global $db;
+    
+    $stmt = $db->prepare(
+        'SELECT COUNT(user_id) AS like_count
+        FROM heart 
+        WHERE food_id = :id'
+    );
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result['like_count'];
+}
