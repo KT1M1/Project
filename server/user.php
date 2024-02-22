@@ -30,7 +30,7 @@ function validate_user_data ($full_name, $user_name, $password, $password_again,
     if ( empty( $password ) ) {
         $error_msg .= "A jeszó megadása kötelező!\n";
     } elseif ( strlen($password) < MINIMUM_PASSWORD_LENGTH ) {
-        $error_msg .= "A jeszó minimu " . MINIMUM_PASSWORD_LENGTH . " karakter!\n";
+        $error_msg .= "A jeszó minimum " . MINIMUM_PASSWORD_LENGTH . " karakter!\n";
     } elseif ( $password !== $password_again ) {
         $error_msg .= "A két jelszó nem egyezik!\n";
     }

@@ -75,7 +75,7 @@
                                 A feltöltött kép neve, kiterjesztéssel együtt, max 100 karakteres lehet.<br>
                                 Max 1 MB fájlméretnyi képet tölts fel.<br>
                                 Csak .jpg, .jpeg, vagy .png kiterjesztésű képeket fogadunk el.<br>
-                                Ajánlott képfelbontás: 1000x800 pixel.<br>
+                                Ajánlott képfelbontás: 800x600 pixel, 4:3 képarány.<br>
                                 Fekvő tájolású fotót tölts fel, felülről lefele fotózva. Ügyelj rá, hogy az étel a kép
                                 középpontjában legyenek.
                             </p>

@@ -65,7 +65,7 @@ if (isset($_SESSION['user'])) {
 <body>
     <div class="login-wrap">
         <div class="login-html">
-            <a href="/"><h1 class="page-name">RecipeShare</h1></a>
+            <a href="/"><h1 class="page-name">Flavora</h1></a>
             <input id="tab-1" type="radio" name="tab" class="sign-in" <?php echo $login_checked; ?>><label for="tab-1"
                 class="tab">Bejelentkezés</label>
             <input id="tab-2" type="radio" name="tab" class="sign-up" <?php echo $signin_checked; ?>><label for="tab-2"
