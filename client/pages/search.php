@@ -11,7 +11,7 @@
     $allergens = get_allergens();
 ?>
 
-<link rel="stylesheet" href="/client/assets/css/search.css" />
+<link rel="stylesheet" href="/client/assets/css/search.css"/>
 
 <div>
     <button class="filter-button">
@@ -57,15 +57,15 @@
             <div>
                 <div class="allergen-div">
                     <?php
-                            foreach($allergens as $allergen) {
-                                echo '
-                                <div class="cboxtags">
-                                    <input type="checkbox" id="allergen_' . $allergen["id"] . '" name="allergen[]" value="' . $allergen["id"] . '">
-                                    <label for="allergen_' . $allergen["id"] . '" class="allergen-lbl">' . ucfirst($allergen["name"]) . " mentes" . '</label>
-                                </div>
-                                ';
-                            }
-                        ?>
+                        foreach($allergens as $allergen) {
+                            echo '
+                            <div class="cboxtags">
+                                <input type="checkbox" id="allergen_' . $allergen["id"] . '" name="allergen[]" value="' . $allergen["id"] . '">
+                                <label for="allergen_' . $allergen["id"] . '" class="allergen-lbl">' . ucfirst($allergen["name"]) . " mentes" . '</label>
+                            </div>
+                            ';
+                        }
+                    ?>
                 </div>
             </div>
         </div>
@@ -76,7 +76,7 @@
     </div>
 </div>
 
-<div class="search-div">
+<div class="container search-div">
     <div class="search-bar">
         <input type="text" id="search_bar_input" class="search-field" placeholder="Keresés..." />
         <button id="search-text-button" class="btn nav-btn search-icon" type="button">
@@ -84,13 +84,13 @@
         </button>
     </div>
     <div>
-        <p>4 találat</p>
+        <p id="recipe-count"></p>
     </div>
 </div>
 
 <hr>
 
-<div class="container">
+<div class="container filters">
     <div id="selected-filters">
         <ul id="filter-list"></ul>
     </div>

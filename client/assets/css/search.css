@@ -118,6 +118,10 @@ input[type="checkbox"] {
     margin-top: 30px;
 }
 
+.filters {
+    padding: 0;
+}
+
 .filter-checkbox {
     background-color: #377E47;
     border: 2px solid #555;
@@ -134,9 +138,9 @@ input[type="checkbox"] {
 
 .search-div{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 20px;
+    align-items: center;
 }
 
 /*Search*/
@@ -144,12 +148,12 @@ input[type="checkbox"] {
     width: auto;
     align-content: center;
     height: 40px;
-    margin-left: 2rem;
 }
 
 .search-field {
     padding: 6px 12px;
     height: 40px;
+    width: 232px;
 }
 
 .search-field:focus {
@@ -157,4 +161,18 @@ input[type="checkbox"] {
     box-shadow: none;
     outline: black auto 1px;
     border-radius: 0;
+}
+
+#recipe-count {
+    margin: 0;
+}
+
+@media (max-width: 576px) {
+    #recipe-count {
+        margin: 20px; /* Adjust the margin value as needed */
+    }
+    .search-div {
+        justify-content: center;
+        margin-top: 30px;
+    }
 }

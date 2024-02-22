@@ -106,10 +106,11 @@ function generate_filter_array() {
 function displayRecipes(data) {
     const resultsRow = document.getElementById('results-row');
     resultsRow.innerHTML = '';
-
+    counter = 0;
     data.forEach((recipe, index) => {
         const colDiv = document.createElement('div');
         colDiv.className = 'col-md-6 col-sm-12 mb-4';
+        counter++;
         colDiv.innerHTML = `
             <a href="/page/show_recipe/${recipe.id}">
                 <div class="card-div">
@@ -129,9 +130,9 @@ function displayRecipes(data) {
                 </div>
             </a>
         `;
-
         resultsRow.appendChild(colDiv);
     });
+    document.getElementById('recipe-count').textContent = `Találat: ${counter} db`;
 }
 
 function get_filtered_recipes(filter_array) {
