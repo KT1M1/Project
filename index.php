@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="/client/assets/css/popular.css">
     <link rel="stylesheet" href="/client/assets/css/return.css">
 
-    <link rel="icon" href="client/assets/img/flavora_nologo.png" type="image/x-icon">
+    <link rel="icon" href="client/assets/img/logocirc.png" type="image/x-icon">
     <title>Flavora</title>
 </head>
 <body>

@@ -13,6 +13,7 @@
     transform: translateX(-100%);
     transition: transform 0.5s ease;
     z-index: 2;
+    border-radius: 15px;
 }
 
 .filter-button {
@@ -41,6 +42,8 @@
     float: right;
     background: #555;
     color: #fff;
+    border-radius: 5px;
+
 }
 
 .sort-div {
@@ -120,6 +123,7 @@ input[type="checkbox"] {
 
 .filters {
     padding: 0;
+    display: none;
 }
 
 .filter-checkbox {
@@ -175,4 +179,8 @@ input[type="checkbox"] {
         justify-content: center;
         margin-top: 30px;
     }
+}
+
+.card-desc {
+    font-weight: normal;
 }

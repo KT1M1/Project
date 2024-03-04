@@ -9,6 +9,42 @@
     $cat_hierarchy = format_main_sub_cat_hierarchy($main_cats, $sub_cats);
 
     $allergens = get_allergens();
+
+    
+    $default_filter_array = [];
+
+    // If the occasion is set in the URL add this into the filter array
+    if(isset($_GET["occasion"])) {
+        array_push($default_filter_array,
+            (object) [
+                "type" => "Category",
+                "text" => isset($_GET["text"]) ? $_GET["text"] : "",
+                "value" => $_GET["occasion"]
+            ]
+        );
+    }
+
+    // If the difficulty is set in the URL add this into the filter array
+    if(isset($_GET["difficulty"])) {
+        array_push($default_filter_array,
+            (object) [
+                "type" => "Category",
+                "text" => isset($_GET["text"]) ? $_GET["text"] : "",
+                "value" => $_GET["difficulty"]
+            ]
+        );
+    }
+
+    // If the category is set in the URL add this into the filter array
+    if(isset($_GET["category"])) {
+        array_push($default_filter_array,
+            (object) [
+                "type" => "Category",
+                "text" => isset($_GET["text"]) ? $_GET["text"] : "",
+                "value" => $_GET["category"]
+            ]
+        );
+    }
 ?>
 
 <link rel="stylesheet" href="/client/assets/css/search.css"/>
@@ -22,7 +58,7 @@
 <div class="container">
     <div class="filter-container">
         <!--Close the filter window-->
-        <button class="close-filter">X</button>
+        <button class="close-filter">&#x2715</button>
 
         <div class="sort-div">
             <p>Rendezés</p>
@@ -92,7 +128,7 @@
 
 <div class="container filters">
     <div id="selected-filters">
-        <ul id="filter-list"></ul>
+        <div id="filter-list"></div>
     </div>
 </div>
 
@@ -107,3 +143,8 @@
 
 <script src="/client/assets/js/display_category.js"></script>
 <script src="/client/assets/js/search.js"></script>
+
+<script>
+    // After the page loaded display the recipes with the php generated default filter
+    get_filtered_recipes(<?php echo json_encode($default_filter_array); ?>);
+</script>

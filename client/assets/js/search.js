@@ -49,14 +49,9 @@ function generate_filter_array() {
             checkbox.type = 'checkbox';
             checkbox.checked = true;
             checkbox.setAttribute('data-value', selectedValue);
-            checkbox.onchange = function () {
-                if (!this.checked) {
-                    this.parentNode.parentNode.removeChild(this.parentNode);
-                }
-            };
 
             label.appendChild(checkbox);
-            const textNode = document.createTextNode(` ${selectedText} \u2715 `);
+            const textNode = document.createTextNode(` ${selectedText} `);
             label.appendChild(textNode);
 
             filterList.appendChild(label);
@@ -78,14 +73,9 @@ function generate_filter_array() {
         newCheckbox.type = 'checkbox';
         newCheckbox.checked = true;
         newCheckbox.setAttribute('data-value', allergenValue);
-        newCheckbox.onchange = function () {
-            if (!this.checked) {
-                this.parentNode.parentNode.removeChild(this.parentNode);
-            }
-        };
 
         label.appendChild(newCheckbox);
-        const textNode = document.createTextNode(` ${allergenText} \u2715 `);
+        const textNode = document.createTextNode(` ${allergenText} `);
         label.appendChild(textNode);
 
         filterList.appendChild(label);
@@ -96,6 +86,7 @@ function generate_filter_array() {
 
     selectedFilters.push({
         type: 'Text',
+        text: search_bar_input.value,
         value: search_bar_input.value
     });
 
@@ -109,7 +100,7 @@ function displayRecipes(data) {
     counter = 0;
     data.forEach((recipe, index) => {
         const colDiv = document.createElement('div');
-        colDiv.className = 'col-md-6 col-sm-12 mb-4';
+        colDiv.className = 'col-md-4 col-sm-6 mb-4';
         counter++;
         colDiv.innerHTML = `
             <a href="/page/show_recipe/${recipe.id}">
@@ -122,7 +113,7 @@ function displayRecipes(data) {
                             <p>
                                 ${recipe.name}
                             </p>
-                            <p>
+                            <p class="card-desc">
                                 ${recipe.description.substring(0,50)}...
                             </p>
                         </div>
@@ -136,6 +127,8 @@ function displayRecipes(data) {
 }
 
 function get_filtered_recipes(filter_array) {
+    generate_presets(filter_array);
+
     fetch('http://localhost/server/search.php', {
         method: 'POST',
         headers: {
@@ -150,6 +143,24 @@ function get_filtered_recipes(filter_array) {
     })
     .catch(error => console.error('Error:', error));
 }
+//Not implemented yet
+function generate_presets(filter_array) {
+    let filterList = document.getElementById("filter-list");
+    filterList.innerHTML = "";
 
-// After the page loaded display the recipes without any filter.
-get_filtered_recipes({});
+    for(let i = 0; i < filter_array.length; i++) {
+        const label = document.createElement('label');
+        label.className = 'filter-checkbox';
+
+        const newCheckbox = document.createElement('input');
+        newCheckbox.type = 'checkbox';
+        newCheckbox.checked = true;
+        newCheckbox.setAttribute('data-value', filter_array[i].text);
+
+        label.appendChild(newCheckbox);
+        const textNode = document.createTextNode(` ${filter_array[i].text} `);
+        label.appendChild(textNode);
+
+        filterList.appendChild(label);
+    }
+}

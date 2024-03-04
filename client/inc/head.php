@@ -3,10 +3,12 @@
 <div class="sticky">
     <div class="container">
         <header>
-            <h1>
-                <a class="brand" href="/">Flavora</a>
-            </h1>
-
+            <div class="title">
+                <img class="logo-img" src="/client/assets/img/restaurant.png" alt="logo">
+                <h1>
+                    <a class="brand" href="/">Flavora</a>
+                </h1>
+            </div>
             <div>
                 <button class="btn nav-btn search-icon" type="button">
                     <a href="/page/search">
@@ -37,7 +39,7 @@
                             <a class="nav-link" href="/page/upload_recipe">Recept feltöltése</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#popular">Most népszerű</a>
+                            <a class="nav-link" href="/#popular">Most népszerű</a>
                         </li>
                         <!--1. DROPDOWN-->
                         <li class="nav-item dropdown">
@@ -46,9 +48,9 @@
                                 Kategória
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#main-course">Főétel</a></li>
-                                <li><a class="dropdown-item" href="#snack">Köztes étkezés</a></li>
-                                <li><a class="dropdown-item" href="#dessert">Desszertek és sütik</a></li>
+                                <li><a class="dropdown-item" href="/page/search&category=4">Főétel</a></li>
+                                <li><a class="dropdown-item" href="/page/search&category=5">Köztes étkezés</a></li>
+                                <li><a class="dropdown-item" href="/page/search&category=7">Desszertek és sütik</a></li>
                             </ul>
                         </li>
                         <!--2. DROPDOWN-->
@@ -58,9 +60,9 @@
                                 Elkészítés
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#ingredients">Könnyű</a></li>
-                                <li><a class="dropdown-item" href="#ingredients">Közepes</a></li>
-                                <li><a class="dropdown-item" href="#ingredients">Nehéz</a></li>
+                                <li><a class="dropdown-item" href="/page/search&difficulty=26">Könnyű</a></li>
+                                <li><a class="dropdown-item" href="/page/search&difficulty=27">Közepes</a></li>
+                                <li><a class="dropdown-item" href="/page/search&difficulty=28">Nehéz</a></li>
                             </ul>
                         </li>
                         <!--3. DROPDOWN-->
@@ -70,10 +72,10 @@
                                 Alkalom
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Karácsony</a></li>
-                                <li><a class="dropdown-item" href="#">Húsvét</a></li>
-                                <li><a class="dropdown-item" href="#">Szilveszter</a></li>
-                                <li><a class="dropdown-item" href="#">Születésnap</a></li>
+                                <li><a class="dropdown-item" href="/page/search&occasion=29">Karácsony</a></li>
+                                <li><a class="dropdown-item" href="/page/search&occasion=30">Húsvét</a></li>
+                                <li><a class="dropdown-item" href="/page/search&occasion=31">Szilveszter</a></li>
+                                <li><a class="dropdown-item" href="/page/search&occasion=54">Születésnap</a></li>
                             </ul>
                         </li>
                     </ul>

@@ -64,6 +64,19 @@ header{
     justify-content: space-between;
 }
 
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    padding: 2px;
+    margin: 5px;
+}
+
 .sticky{
     position: sticky;
     top: 0;
@@ -81,7 +94,7 @@ header{
 }
 
 .img-icon{
-    width: 25px;
+    width: 30px;
 }
 
 /*Navbar*/

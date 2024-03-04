@@ -1,5 +1,8 @@
 <?php
 require_once("./server/show.php");
+require_once("./server/main.php");
+
+$populars = get_populars();
 
 // Fetch the recipe data for recipes with IDs 13, 14, and 15
 $recipe_data_13 = get_recipe_by_id(13)[0];
@@ -30,103 +33,68 @@ $recipe_data_15 = get_recipe_by_id(15)[0];
         </div>
     </div>
 
+    
 
     <div class="row popular">
-        <!--Rank 1 (ID 13)-->
-        <div class="col-12 col-sm-6 col-lg-4">
-            <a href="page/show_recipe/<?php echo $recipe_data_13['id']; ?>">
-                <div class="card-div">
-                    <div class="rank-cube">#1</div>
-                    <div class="card-top">
-                        <img class="card-pic" src="/uploads/imgs/<?php echo $recipe_data_13['img_url']; ?>">
-                    </div>
-                    <div class="card-bottom">
-                        <div class="card-text">
-                            <p>
-                                <?php echo $recipe_data_13['name']; ?>
-                            </p>
+
+        <?php
+        $counter = 1;
+        foreach($populars as $popular) {
+        ?>
+            <div class="col-12 col-sm-6 col-lg-4">
+                <a href="page/show_recipe/<?php echo $popular['id']; ?>">
+                    <div class="card-div">
+                        <div class="rank-cube">#<?php echo $counter; ?></div>
+                        <div class="card-top">
+                            <img class="card-pic" src="/uploads/imgs/<?php echo $popular['img_url']; ?>">
                         </div>
-                        <div class="card-rate">
-                            <img class="img-fluid card-heart" src="./client/assets/img/heart.png">
-                            <p class="card-heart">20</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <!--Rank 2 (ID 14)-->
-        <div class="col-12 col-sm-6 col-lg-4">
-            <a href="page/show_recipe/<?php echo $recipe_data_14['id']; ?>">
-                <div class="card-div">
-                    <div class="rank-cube">#2</div>
-                    <div class="card-top">
-                        <img class="card-pic" src="/uploads/imgs/<?php echo $recipe_data_14['img_url']; ?>">
-                    </div>
-                    <div class="card-bottom">
-                        <div class="card-text">
-                            <p>
-                                <?php echo $recipe_data_14['name']; ?>
-                            </p>
-                        </div>
-                        <div class="card-rate">
-                            <img class="img-fluid card-heart" src="./client/assets/img/heart.png">
-                            <p class="card-heart">18</p>
+                        <div class="card-bottom">
+                            <div class="card-text">
+                                <p>
+                                    <?php echo $popular['name']; ?>
+                                </p>
+                            </div>
+                            <div class="card-rate">
+                                <img class="img-fluid card-heart" src="./client/assets/img/heart.png">
+                                <p class="card-heart"><?php echo $popular['likes']; ?></p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </a>
-        </div>
-        <!--Rank 3 (ID 15)-->
-        <div class="col-12 col-sm-6 col-lg-4">
-            <a href="page/show_recipe/<?php echo $recipe_data_15['id']; ?>">
-                <div class="card-div">
-                    <div class="rank-cube">#3</div>
-                    <div class="card-top">
-                        <img class="card-pic" src="/uploads/imgs/<?php echo $recipe_data_15['img_url']; ?>">
-                    </div>
-                    <div class="card-bottom">
-                        <div class="card-text">
-                            <p>
-                                <?php echo $recipe_data_15['name']; ?>
-                            </p>
-                        </div>
-                        <div class="card-rate">
-                            <img class="img-fluid card-heart" src="./client/assets/img/heart.png">
-                            <p class="card-heart">13</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
+                </a>
+            </div>
+        <?php
+            $counter++;
+        }
+        ?>
     </div>
 </div>
 
 <!--Search By Ingredient-->
 <div class="container ing-nav-container">
-    <h2 class="ing-title myanchor" id="ingredients">Keress fő hozzávaló alapján:</h2>
+    <h2 class="ing-title myanchor" id="ingredients">Keress alkalom alapján:</h2>
     <div class="ing-icon-container">
         <div class="ing-nav-piece">
-            <a href="" class="rotate">
-                <img class="img-fluid ing-icon rotate-image" src="./client/assets/img/mealTypes/meat2.jpg">
-                <p class="ing-piece-txt">Hús</p>
+            <a href="/page/search&occasion=29" class="rotate">
+                <img class="img-fluid ing-icon rotate-image" src="./client/assets/img/occasion/xmas.jpg">
+                <p class="ing-piece-txt">Karácsony</p>
             </a>
         </div>
         <div class="ing-icon-piece">
-            <a href="" class="rotate">
-                <img class="img-fluid ing-icon rotate-image" src="./client/assets/img/mealTypes/fish.jpg">
-                <p class="ing-piece-txt">Hal</p>
+            <a href="/page/search&occasion=30" class="rotate">
+                <img class="img-fluid ing-icon rotate-image" src="./client/assets/img/occasion/easter.png">
+                <p class="ing-piece-txt">Húsvét</p>
             </a>
         </div>
         <div class="ing-icon-piece">
-            <a href="" class="rotate">
-                <img class="img-fluid ing-icon rotate-image" src="./client/assets/img/mealTypes/pasta1.jpg">
-                <p class="ing-piece-txt">Tészta</p>
+            <a href="/page/search&occasion=31" class="rotate">
+                <img class="img-fluid ing-icon rotate-image" src="./client/assets/img/occasion/newy.jpg">
+                <p class="ing-piece-txt">Szilveszter</p>
             </a>
         </div>
         <div class="ing-icon-piece">
-            <a href="" class="rotate">
-                <img class="img-fluid ing-icon rotate-image" src="./client/assets/img/mealTypes/vegs1.jpg">
-                <p class="ing-piece-txt">Zöldség</p>
+            <a href="/page/search&occasion=54" class="rotate">
+                <img class="img-fluid ing-icon rotate-image" src="./client/assets/img/occasion/bda.jpg">
+                <p class="ing-piece-txt">Születésnap</p>
             </a>
         </div>
     </div>
@@ -152,7 +120,9 @@ $recipe_data_15 = get_recipe_by_id(15)[0];
                     vegetáriánus vagy vegán ételek esetében is számos izgalmas lehetőség áll rendelkezésre.</p>
             </div>
             <div class="category-btn">
-                <button type="button" class="btn ctg-button">Ismerd meg a kategória további fogásait!</button>
+                <a href="/page/search&category=4">
+                    <button type="button" class="btn ctg-button">Ismerd meg a kategória további fogásait!</button>
+                </a>
             </div>
         </div>
         <!--IMG-->
@@ -193,7 +163,9 @@ $recipe_data_15 = get_recipe_by_id(15)[0];
                         class="highlight-text"> nasiról</span> vagy esti snackről.</p>
             </div>
             <div class="category-btn">
-                <button type="button" class="btn ctg-button">Ismerd meg a kategória további fogásait!</button>
+                <a href="/page/search&category=5">
+                    <button type="button" class="btn ctg-button">Ismerd meg a kategória további fogásait!</button>
+                </a>
             </div>
         </div>
         <!--IMG-->
@@ -235,7 +207,9 @@ $recipe_data_15 = get_recipe_by_id(15)[0];
                 </p>
             </div>
             <div class="category-btn">
-                <button type="button" class="btn ctg-button">Ismerd meg a kategória további fogásait!</button>
+                <a href="/page/search&category=7">
+                    <button type="button" class="btn ctg-button">Ismerd meg a kategória további fogásait!</button>
+                </a>
             </div>
         </div>
         <!--IMG-->
