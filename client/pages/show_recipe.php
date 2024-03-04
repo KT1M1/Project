@@ -8,8 +8,21 @@ $ingredients = get_ingredients_for_recipe($recipe_data['id']);
 $steps = get_steps_for_recipe($recipe_data['id']);
 $user = get_user_data($recipe_data['id']);
 $likes = get_likes($recipe_data['id']);
+
+$is_user_liked = false;
 ?>
 
+<script>
+    let food_id = <?php echo $_GET['id']; ?>;
+
+    <?php
+        if( isset($_SESSION["user"]) ) {
+            echo "let user_id = " . $_SESSION["user"]["id"] . ";";
+
+            $is_user_liked = is_liked($_GET['id'], $_SESSION["user"]["id"]);
+        }
+    ?>
+</script>
 <script src="/client/assets/js/show.js"></script>
 
 <link rel="stylesheet" href="/client/assets/css/show_recipe.css">
@@ -46,8 +59,9 @@ $likes = get_likes($recipe_data['id']);
                 </div>
                 <div class="heart-container">
                     <img id="full-heart" class="heart-img" src="/client/assets/img/fullheart.png" alt="Like"
-                        style="display:none;">
-                    <img id="heart" class="heart-img" src="/client/assets/img/heart.png" alt="Unlike">
+                        <?php if( !$is_user_liked ) echo 'style="display:none;"'; ?> >
+                    <img id="heart" class="heart-img" src="/client/assets/img/heart.png" alt="Unlike"
+                        <?php if( $is_user_liked ) echo 'style="display:none;"'; ?> >
                     <p>
                         <?php echo $likes; ?>
                     </p>

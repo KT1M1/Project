@@ -116,3 +116,46 @@ function get_likes($id) {
 
     return $result['like_count'];
 }
+
+function is_liked( $food_id, $user_id ) {
+    global $db;
+
+    $sql = "SELECT * FROM heart WHERE food_id = :food_id AND user_id = :user_id";
+
+    $stmt = $db->prepare($sql);
+
+    $stmt->bindParam(':food_id', $food_id, PDO::PARAM_INT);
+    $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    return $result != NULL;
+}
+
+function set_like( $food_id, $user_id ) {
+    global $db;
+
+    $sql = "INSERT INTO heart (food_id, user_id) VALUES (:food_id, :user_id)";
+
+    $stmt = $db->prepare($sql);
+
+    $stmt->bindParam(':food_id', $food_id, PDO::PARAM_INT);
+    $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+
+    $stmt->execute();
+}
+
+function remove_like( $food_id, $user_id ) {
+    global $db;
+
+    $sql = "DELETE FROM heart WHERE food_id = :food_id AND user_id = :user_id;";
+
+    $stmt = $db->prepare($sql);
+
+    $stmt->bindParam(':food_id', $food_id, PDO::PARAM_INT);
+    $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+
+    $stmt->execute();
+}
