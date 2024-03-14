@@ -109,6 +109,13 @@ if (isset($_SESSION['user'])) {
                     <input id="email" name="email" type="email" class="input" value="<?php echo $email; ?>">
                 </div>
                 <div class="group">
+                    <label for="neme">Neme:</label>
+                    <select name="neme" id="neme" class="input" required>
+                        <option value="no">Nő</option>
+                        <option value="ferfi">Férfi</option>
+                    </select>
+                </div>
+                <div class="group">
                     <input type="submit" class="button" value="Regisztráció">
                 </div>
                 <div class="hr"></div>

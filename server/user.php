@@ -42,6 +42,17 @@ function validate_user_data ($full_name, $user_name, $password, $password_again,
 function registration($full_name, $user_name, $password, $password_again, $email) {
     $msg = validate_user_data($full_name, $user_name, $password, $password_again, $email);
 
+     // Get the gender selection from the POST request
+     $gender = isset($_POST['neme']) ? $_POST['neme'] : '';
+
+     // Decide on the profile_pic based on the gender
+    $profile_pic = '';
+    if ($gender == 'no') {
+        $profile_pic = 'no.jpg';
+    } else if ($gender == 'ferfi') {
+        $profile_pic = 'ferfi.png';
+    }
+
     if( $msg != "" ) {
         return $msg;
     }
@@ -59,12 +70,13 @@ function registration($full_name, $user_name, $password, $password_again, $email
     try {
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
-        $sql="INSERT INTO `user`(`full_name`, `user_name`, `password`, `email`) VALUES (:full_name, :user_name, :password, :email)";
+        $sql="INSERT INTO `user`(`full_name`, `user_name`, `password`, `email`, `profile_pic`) VALUES (:full_name, :user_name, :password, :email, :profile_pic)";
         $stmt = $db->prepare($sql);
         $stmt->bindParam(':full_name', $full_name, PDO::PARAM_STR);
         $stmt->bindParam(':user_name', $user_name, PDO::PARAM_STR);
         $stmt->bindParam(':password', $password_hash, PDO::PARAM_STR);
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->bindParam(':profile_pic', $profile_pic, PDO::PARAM_STR);
 
         $stmt->execute();
 

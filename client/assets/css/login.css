@@ -30,14 +30,16 @@ a {
     text-decoration: none;
 }
 
-a:hover{
+a:hover {
     color: #c8c8c8;
 }
-.page-name{
+
+.page-name {
     margin-bottom: 40px;
 }
 
-label.tab, .page-name{
+label.tab,
+.page-name {
     text-align: center;
 }
 
@@ -127,7 +129,7 @@ label.tab, .page-name{
 .login-form .group .input,
 .login-form .group .button {
     border: none;
-    padding: 15px 20px;
+    padding: 13px 13px;
     border-radius: 25px;
     background: rgba(255, 255, 255, 0.1);
 }
@@ -220,4 +222,8 @@ label.tab, .page-name{
 .error {
     position: absolute;
     color: #8e0e0e;
+}
+
+option {
+    background: #797979;
 }
