@@ -191,7 +191,7 @@ $recipe_data_15 = get_recipe_by_id(15)[0];
 <div class="container">
     <div class="container-fluid">
         <div class="divider-container">
-            <h2 class="divider-left myanchor" id="dessert">Desszertek és sütik</h2>
+            <h2 class="divider-left myanchor" id="dessert">Desszert</h2>
             <hr>
         </div>
     </div>

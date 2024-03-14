@@ -1,21 +1,21 @@
-.lead-text{
+.lead-text {
     color: white;
     background-color: #46A25B;
     text-align: center;
 }
 
-.introduct-text{
+.introduct-text {
     text-align: center;
     margin-top: 1rem;
 }
 
-.popular{
+.popular {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.popular-text{
+.popular-text {
     margin-bottom: 2rem;
     width: 100%;
     max-width: 1200px;
@@ -55,7 +55,7 @@
     margin-right: 20px;
 }
 
-.card-pic{
+.card-pic {
     width: 100%;
 }
 
@@ -80,7 +80,7 @@
     font-weight: bold;
 }
 
-.card-heart{
+.card-heart {
     max-width: 25px;
     font-weight: bold;
 }

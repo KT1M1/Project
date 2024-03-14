@@ -50,7 +50,7 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="/page/search&category=4">Főétel</a></li>
                                 <li><a class="dropdown-item" href="/page/search&category=5">Köztes étkezés</a></li>
-                                <li><a class="dropdown-item" href="/page/search&category=7">Desszertek és sütik</a></li>
+                                <li><a class="dropdown-item" href="/page/search&category=7">Desszert</a></li>
                             </ul>
                         </li>
                         <!--2. DROPDOWN-->

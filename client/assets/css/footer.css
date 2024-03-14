@@ -1,0 +1,19 @@
+.brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-img {
+    width: 2rem;
+    height: 2rem;
+    padding: 5px;
+}
+
+.grey {
+    color: #bababa;
+}
+
+.contact {
+    font-size: 18px;
+}
