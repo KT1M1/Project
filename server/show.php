@@ -88,7 +88,7 @@ function get_user_data($id) {
     global $db;
     
     $stmt = $db->prepare(
-        'SELECT user.user_name, user.registration_date
+        'SELECT user.user_name, user.registration_date, user.id
         FROM food
         LEFT JOIN user ON food.user_id = user.id
         WHERE food.id = :id'

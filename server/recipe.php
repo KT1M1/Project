@@ -267,14 +267,14 @@ function image_uploader($name, $tmp_name, $size) {
 
     // Check file size
     if ($size > MAX_FILE_SIZE_MB * 1024 * 1024) {
-        //echo "Error: File size is too large (limit is 5MB).";
+        echo "Error: File size is too large.";
         $uploadOk = false;
     }
 
     // Allow certain file formats
     $allowedFormats = ["jpg", "jpeg", "png"];
     if (!in_array($imageFileType, $allowedFormats)) {
-        //echo "Error: Only JPG, JPEG, and PNG files are allowed.";
+        echo "Error: Only JPG, JPEG, and PNG files are allowed.";
         $uploadOk = false;
     }
 
@@ -283,7 +283,7 @@ function image_uploader($name, $tmp_name, $size) {
         if (move_uploaded_file($tmp_name, $targetFile)) {
             return basename($targetFile);
         } else {
-            //echo "Error uploading file.";
+            echo "Error uploading file.";
         }
     }
 }

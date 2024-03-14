@@ -35,7 +35,10 @@ option:hover {
     max-width: 100%;
     max-height: 300px;
     display: block;
-    margin: 10px auto;
+}
+
+.uploaded-img {
+    height: 30vh;;
 }
 
 #file-input {  /*Cannot be hidden or gives error*/

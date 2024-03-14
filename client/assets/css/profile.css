@@ -1,9 +1,9 @@
-.pfp{
+.pfp {
     border-radius: 50%;
     max-width: 200px;
 }
 
-.profile-col{
+.profile-col {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,11 +12,20 @@
     align-items: center;
 }
 
-.number{
+.number {
     font-size: 26px;
     font-weight: bold;
 }
 
 .card-col {
     padding: 20px;
+}
+
+.delete-cube {
+    width: 40px;
+    height: auto;
+    background: none;
+    border: 1px solid black;
+    padding: 5px;
+    margin-left: 10px;
 }

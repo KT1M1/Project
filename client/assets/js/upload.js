@@ -10,7 +10,7 @@ function displayImage(input) {
         const reader = new FileReader();
 
         reader.onload = function(e) {
-        dropContainer.innerHTML = `<img src="${e.target.result}" alt="Uploaded Image">`;
+        dropContainer.innerHTML = `<img class="uploaded-img" src="${e.target.result}" alt="Uploaded Image">`;
         };
 
         reader.readAsDataURL(file);

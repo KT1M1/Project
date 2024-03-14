@@ -60,14 +60,6 @@
         <!--Close the filter window-->
         <button class="close-filter">&#x2715</button>
 
-        <div class="sort-div">
-            <p>Rendezés</p>
-            <select>
-                <option value="like">Legkedveltebb</option>
-                <option value="new">Legújabb</option>
-            </select>
-        </div>
-
         <div>
             <div class="selectContainer">
                 <div id="main-category"></div>

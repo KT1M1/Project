@@ -2,6 +2,7 @@
 require_once("./server/show.php");
 
 $recipe_data = get_recipe_by_id($_GET['id'])[0];
+// Get informations associated with the recipe
 $categories = get_categories_for_recipe($recipe_data['id']);
 $allergens = get_allergens_for_recipe($recipe_data['id']);
 $ingredients = get_ingredients_for_recipe($recipe_data['id']);
@@ -16,9 +17,12 @@ $is_user_liked = false;
     let food_id = <?php echo $_GET['id']; ?>;
 
     <?php
+        // Check if a user is logged in
         if( isset($_SESSION["user"]) ) {
+             // Pass the user ID from PHP session to JavaScript
             echo "let user_id = " . $_SESSION["user"]["id"] . ";";
 
+            // Check if the currently logged-in user has liked the recipe
             $is_user_liked = is_liked($_GET['id'], $_SESSION["user"]["id"]);
         }
     ?>
@@ -52,20 +56,35 @@ $is_user_liked = false;
             <img class="img-fluid" src="/uploads/imgs/<?php echo $recipe_data['img_url']; ?>">
             <div class="small-detail-container">
                 <div>
-                    <p>
-                        <?php echo ($user['user_name']); ?> -
-                        <?php echo ($user['registration_date']); ?>
-                    </p>
+                    <a href="/page/view_profile&user_id=<?php echo $user['id']; ?>">
+                        <p>
+                            <?php echo ($user['user_name']); ?> -
+                            <?php echo ($recipe_data['upload_date']); ?>
+                        </p>
+                    </a>
                 </div>
-                <div class="heart-container">
-                    <img id="full-heart" class="heart-img" src="/client/assets/img/fullheart.png" alt="Like"
-                        <?php if( !$is_user_liked ) echo 'style="display:none;"'; ?> >
-                    <img id="heart" class="heart-img" src="/client/assets/img/heart.png" alt="Unlike"
-                        <?php if( $is_user_liked ) echo 'style="display:none;"'; ?> >
-                    <p>
-                        <?php echo $likes; ?>
-                    </p>
-                </div>
+
+                <?php
+                // If a user is not logged in, wrap the like feature in a link to prompt login
+                    if( !isset($_SESSION["user"]) ) {
+                        echo '<a href="/login">';
+                    }
+                ?>
+                    <div class="heart-container">
+                        <img id="full-heart" class="heart-img" src="/client/assets/img/fullheart.png" alt="Like"
+                            <?php if( !$is_user_liked ) echo 'style="display:none;"'; ?> >
+                        <img id="heart" class="heart-img" src="/client/assets/img/heart.png" alt="Unlike"
+                            <?php if( $is_user_liked ) echo 'style="display:none;"'; ?> >
+                        <p>
+                            <?php echo $likes; ?>
+                        </p>
+                    </div>
+                <?php
+                    if( !isset($_SESSION["user"]) ) {
+                        echo '</a>';
+                    }
+                ?>
+
             </div>
         </div>
     </div>
@@ -92,7 +111,7 @@ $is_user_liked = false;
         <div class="col-lg-4 col-md-12 ingredient-container" id="ingredientList">
             <h1 class="h1-border">Hozzávalók:</h1>
             <?php
-                $counter = 1; //Initialize a counter for unique checkbox IDs
+                $counter = 1; // Create a counter for unique checkbox IDs
                 foreach($ingredients as $ingredient) {
                     echo 
                     '<div class="ing-item">
@@ -108,7 +127,7 @@ $is_user_liked = false;
             <h1 class="h1-border h1-step">Elkészítés:</h1>
 
             <?php
-                $counter = 1; //Initialize a counter to number each step
+                $counter = 1; // Create a counter to number each step
                 foreach($steps as $step) {
                     echo '
                     <div class="steps">
@@ -118,66 +137,6 @@ $is_user_liked = false;
                     $counter++;
                 }
                 ?>
-        </div>
-
-        <!--Similar Recipes-->
-        <div>
-            <div class="divider-container">
-                <h2 class="divider-left">Hasonló receptek</h2>
-                <hr>
-            </div>
-            <div>
-                <p>Tekintsd meg az aktuális recept mellett elérhető további hasonló recepteket is! Fedezd fel ezeket az
-                    alternatív változatokat, és kóstold meg őket, ha az aktuális recept tetszett.
-                    A hasonló receptek új ízkombinációkkal és variációkkal szolgálnak, így garantáltan megtalálod a
-                    saját
-                    ízlésednek leginkább megfelelőt. Ne hagyd ki a lehetőséget, hogy kibővítsd a kulináris élményeidet,
-                    és
-                    élvezd az új gasztronómiai felfedezéseket!
-                </p>
-            </div>
-
-            <div class="row popular">
-                <!--First Column-->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="card-div">
-                        <div class="card-top">
-                            <img class="card-pic" src="/client/assets/img/bolognese.jpg" alt="">
-                        </div>
-                        <div class="card-bottom">
-                            <div class="card-text">
-                                <p>Bolognai Spagetti</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Second Column-->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="card-div">
-                        <div class="card-top">
-                            <img class="card-pic" src="/client/assets/img/bolognese.jpg" alt="">
-                        </div>
-                        <div class="card-bottom">
-                            <div class="card-text">
-                                <p>Bolognai Spagetti</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Third Column-->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="card-div">
-                        <div class="card-top">
-                            <img class="card-pic" src="/client/assets/img/bolognese.jpg" alt="">
-                        </div>
-                        <div class="card-bottom">
-                            <div class="card-text">
-                                <p>Bolognai Spagetti</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
