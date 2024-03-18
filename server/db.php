@@ -1,10 +1,10 @@
 <?php
 $host = 'localhost';
-$db_name = 'recipeshare';
+$db_name = 'flavora';
 $db_username = 'root';
 $db_password = '';
 
-//$db_username = 'recipeshare';
+//$db_username = 'flavora';
 //$db_password = 'Qwertz0105';
 
 
