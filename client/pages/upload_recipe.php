@@ -94,6 +94,7 @@
                 </div>
                 <input type="file" id="file-input" name="image" accept="image/*" onchange="displayImage(this)" required>
                 <div class="modal-Btn-div">
+                    <p class="modalP">Max 1 MB</p>
                     <button id="modalBtn">Képfeltöltési segédlet</button>
                 </div>
             </div>

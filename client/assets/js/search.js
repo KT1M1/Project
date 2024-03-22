@@ -129,7 +129,7 @@ function displayRecipes(data) {
 function get_filtered_recipes(filter_array) {
     generate_presets(filter_array);
 
-    fetch('http://localhost/server/search.php', {
+    fetch('/server/search.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

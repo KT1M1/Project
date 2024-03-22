@@ -147,9 +147,10 @@ input[type="checkbox"] {
 
 /*Search*/
 .search-bar {
+    display: flex;
     width: auto;
-    align-content: center;
     height: 40px;
+    align-items: center;
 }
 
 .search-field {

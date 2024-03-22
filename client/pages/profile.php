@@ -32,7 +32,7 @@ $liked = get_liked($user["id"]);
                 <?php echo $user["user_name"]; ?>
             </p>
             <p>regisztrált:
-                <?php echo $user["registration_date"]; ?>
+                <?php echo date("Y-m-d", strtotime($user["registration_date"])); ?>
             </p>
         </div>
 
@@ -118,3 +118,5 @@ $liked = get_liked($user["id"]);
     </div>
 
 </div>
+
+<script src="/client/assets/js/profile.js"></script>

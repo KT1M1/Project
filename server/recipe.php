@@ -288,4 +288,8 @@ function image_uploader($name, $tmp_name, $size) {
     }
 }
 
+if (isset($_POST['upload'])) {
+    echo '<div class="response">Sikeres feltöltés!</div>'; // For a text message on the page
+}
+
 ?>

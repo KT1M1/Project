@@ -78,7 +78,7 @@ function get_user_data($user_id) {
     global $db;
 
     $stmt = $db->prepare(
-        'SELECT * FROM user WHERE id = :user_id;'
+        'SELECT id, full_name, user_name, password, email, profile_pic, DATE(registration_date) as registration_date FROM user WHERE id = :user_id;'
     );
 
     $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);

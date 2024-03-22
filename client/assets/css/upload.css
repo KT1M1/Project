@@ -130,7 +130,7 @@ input#nev {
     border-radius: 8px;
 }
 
-#charCount, #modalBtn {
+#charCount, #modalBtn, .modalP {
     font-size: 0.9em;
     color: grey;
     text-align: end;
@@ -347,12 +347,20 @@ form {
 }
 
 .modal-Btn-div {
-    text-align: end;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 #modalBtn {
     border: none;
     background: none;
+}
+
+.modalP {
+    padding: 0;
+    margin-top: 5px;
+    color: #e60000;
 }
 
 .close {
@@ -371,4 +379,23 @@ form {
 
 .how-img-div {
     text-align: end;
+}
+
+.response {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+    color: #377E47;
+    font-weight: bold;
+}
+
+.suggestion:hover {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.suggestion {
+    padding: 2px;
+    border-bottom: 1px solid #ccc;
+    border-radius: 4px;
 }
