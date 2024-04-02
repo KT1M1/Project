@@ -59,7 +59,7 @@ $liked = get_liked($user["id"]);
                 echo '
                 <div class="col-12 col-sm-6 col-lg-4">
                     <a href="show_recipe/'.$upload['id'].'" class="card-div-link">
-                        <div class="card-div">
+                        <div class="card-div card-div-custom">
                             <div class="card-top">
                                 <img class="card-pic" src="/uploads/imgs/'.$upload['img_url'].'">
                             </div>

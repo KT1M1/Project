@@ -101,6 +101,12 @@ header {
     width: 30px;
 }
 
+@media (max-width: 768px) {
+    .img-icon {
+        width: 25px;
+    }    
+}
+
 /*Navbar*/
 .dropdown-item.active,
 .dropdown-item:active {

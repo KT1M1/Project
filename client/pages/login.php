@@ -36,9 +36,8 @@ if(isset( $_POST['signin'] ) && $_POST['signin'] == '1') {
     );
 }
 
-/**
- * If the user already logged in redirect to main page.
- */
+// If the user already logged in redirect to main page.
+
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
@@ -135,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function adjustErrorStyling() {
         if(registrationTab.checked) {
             errorElements.forEach(function(errorElement) {
-                errorElement.style.marginTop = '130px';
+                errorElement.style.marginTop = '185px';
             });
         } else {
             errorElements.forEach(function(errorElement) {

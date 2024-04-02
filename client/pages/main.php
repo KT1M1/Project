@@ -12,7 +12,7 @@ $recipe_data_15 = get_recipe_by_id(15)[0];
 
 
 <div class="banner-container">
-    <img class="banner-img" src="./client/assets/img/banner1.jpg">
+    <img class="banner-img" src="./client/assets/img/banner.webp" alt="Banner Image">
     <div class="text-overlay">
         <h2 class="banner-txt">Oszd meg az örömöt, ízleld meg a közösség erejét.</h2>
     </div>
@@ -46,7 +46,7 @@ $recipe_data_15 = get_recipe_by_id(15)[0];
                     <div class="card-div">
                         <div class="rank-cube">#<?php echo $counter; ?></div>
                         <div class="card-top">
-                            <img class="card-pic" src="/uploads/imgs/<?php echo $popular['img_url']; ?>">
+                            <img class="card-pic" src="/uploads/imgs/<?php echo $popular['img_url']; ?>" alt="upload-image">
                         </div>
                         <div class="card-bottom">
                             <div class="card-text">
@@ -55,7 +55,7 @@ $recipe_data_15 = get_recipe_by_id(15)[0];
                                 </p>
                             </div>
                             <div class="card-rate">
-                                <img class="img-fluid card-heart" src="./client/assets/img/heart.png">
+                                <img class="img-fluid card-heart" src="./client/assets/img/heart.png" alt="heart-icon">
                                 <p class="card-heart"><?php echo $popular['likes']; ?></p>
                             </div>
                         </div>
@@ -75,25 +75,25 @@ $recipe_data_15 = get_recipe_by_id(15)[0];
     <div class="ing-icon-container">
         <div class="ing-nav-piece">
             <a href="/page/search&occasion=29" class="rotate">
-                <img class="img-fluid ing-icon rotate-image" src="./client/assets/img/occasion/xmas.jpg">
+                <img class="img-fluid ing-icon rotate-image" src="./client/assets/img/occasion/xmas.webp" alt="Christmas">
                 <p class="ing-piece-txt">Karácsony</p>
             </a>
         </div>
         <div class="ing-icon-piece">
             <a href="/page/search&occasion=30" class="rotate">
-                <img class="img-fluid ing-icon rotate-image" src="./client/assets/img/occasion/easter.png">
+                <img class="img-fluid ing-icon rotate-image" src="./client/assets/img/occasion/easter.webp" alt="Easter">
                 <p class="ing-piece-txt">Húsvét</p>
             </a>
         </div>
         <div class="ing-icon-piece">
             <a href="/page/search&occasion=31" class="rotate">
-                <img class="img-fluid ing-icon rotate-image" src="./client/assets/img/occasion/newy.jpg">
+                <img class="img-fluid ing-icon rotate-image" src="./client/assets/img/occasion/newyear.webp" alt="New Year">
                 <p class="ing-piece-txt">Szilveszter</p>
             </a>
         </div>
         <div class="ing-icon-piece">
             <a href="/page/search&occasion=54" class="rotate">
-                <img class="img-fluid ing-icon rotate-image" src="./client/assets/img/occasion/bda.jpg">
+                <img class="img-fluid ing-icon rotate-image" src="./client/assets/img/occasion/bda.webp" alt="Birthday">
                 <p class="ing-piece-txt">Születésnap</p>
             </a>
         </div>
@@ -130,7 +130,7 @@ $recipe_data_15 = get_recipe_by_id(15)[0];
             <a href="page/show_recipe/<?php echo $recipe_data_13['id']; ?>">
                 <div class="card-div">
                     <div class="card-top">
-                        <img class="card-pic" src="/uploads/imgs/<?php echo $recipe_data_13['img_url']; ?>">
+                        <img class="card-pic" src="/uploads/imgs/<?php echo $recipe_data_13['img_url']; ?>" alt="main-course-image">
                     </div>
                     <div class="card-bottom">
                         <div class="card-text">
@@ -173,7 +173,7 @@ $recipe_data_15 = get_recipe_by_id(15)[0];
             <a href="page/show_recipe/<?php echo $recipe_data_15['id']; ?>">
                 <div class="card-div">
                     <div class="card-top">
-                        <img class="img-fluid card-pic" src="/uploads/imgs/<?php echo $recipe_data_15['img_url']; ?>">
+                        <img class="img-fluid card-pic" src="/uploads/imgs/<?php echo $recipe_data_15['img_url']; ?>" alt="snack-image">
                     </div>
                     <div class="card-bottom">
                         <div class="card-text">
@@ -217,7 +217,7 @@ $recipe_data_15 = get_recipe_by_id(15)[0];
             <a href="page/show_recipe/<?php echo $recipe_data_14['id']; ?>">
                 <div class="card-div">
                     <div class="card-top">
-                        <img class="card-pic" src="/uploads/imgs/<?php echo $recipe_data_14['img_url']; ?>">
+                        <img class="card-pic" src="/uploads/imgs/<?php echo $recipe_data_14['img_url']; ?>" alt="dessert-image">
                     </div>
                     <div class="card-bottom">
                         <div class="card-text">

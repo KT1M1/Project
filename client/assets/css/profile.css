@@ -28,4 +28,9 @@
     border: 1px solid black;
     padding: 5px;
     margin-left: 10px;
+    border-top: 0;
+}
+
+.card-div-custom {
+    margin: 10px 10px 0px 10px;
 }

@@ -233,6 +233,7 @@ form {
     align-content: center;
     align-items: baseline;
     justify-content: center;
+    text-align: center;
 }
 
 .hozzavalo {
@@ -398,4 +399,13 @@ form {
     padding: 2px;
     border-bottom: 1px solid #ccc;
     border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .row-category {
+        text-align: center;
+    }
+    .portion-col {
+        text-align: center;
+    }
 }

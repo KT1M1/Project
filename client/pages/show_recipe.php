@@ -116,7 +116,7 @@ $is_user_liked = false;
                     echo 
                     '<div class="ing-item">
                         <input type="checkbox" id="ing' . $counter . '" class="ing-cb">
-                        <label for="ing' . $counter . '" class="ing-lbl">'. $ingredient['ingredient'] . ' ' . $ingredient['quantity'] . ' ' . $ingredient['unit'] .'</label>
+                        <label for="ing' . $counter . '" class="ing-lbl">' . $ingredient['quantity'] . ' ' . $ingredient['unit'] .' ' . $ingredient['ingredient'] . ' </label>
                     </div>';
                     $counter++;
                 }

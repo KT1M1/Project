@@ -40,11 +40,15 @@
 
 .close-filter {
     margin-bottom: 10px;
-    float: right;
     background: #555;
     color: #fff;
     border-radius: 5px;
+}
 
+.close-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 select {

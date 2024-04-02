@@ -81,7 +81,7 @@
                             </p>
                         </div>
                         <div class="col-md-6 col-sm-12 how-img-div">
-                            <img class="img-fluid" src="../client/assets/img/howtopic.jpg" alt="How To Picture">
+                            <img class="img-fluid" src="../client/assets/img/howtopic.webp" alt="How To Picture">
                         </div>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
             <h2 class="divider-left">Kategória</h2>
             <hr>
         </div>
-        <div class="row">
+        <div class="row row-category">
             <div class="col-md-6 col-sm-12">
 
                 <div class="selectContainer">
@@ -198,7 +198,7 @@
                 <button type="button" class="remove-btn">x</button>
             </div>
         </div>
-        <!-- Új hozzávaló mezők hozzáadása gomb -->
+        <!-- Add Ingredient Button -->
         <button type="button" class="add-btn" onclick="addIngredient()">Hozzávaló hozzáadás</button>
 
 
@@ -219,7 +219,7 @@
                     required>
             </div>
         </div>
-        <!-- Új lépés mezők hozzáadása gomb -->
+        <!-- Add Step Button -->
         <button type="button" class="add-btn" onclick="addStep()">Lépés hozzáadás</button>
 
         <div class="submit-div">
@@ -235,13 +235,13 @@
     categories = <?php echo json_encode($cat_hierarchy); ?>;
 
     units_template = `<select class="hozzavalo hozzavalo-lbl" name="ingredient_unit[]">
-                    <option selected="true" disabled="disabled">Mértékegység:</option>
-                    <?php
-                    foreach ($units as $unit) {
-                        echo '<option value="' . $unit['id'] . '">' . $unit['name'] . '</option>';
-                    }       
-                    ?>
-                </select>`;
+                        <option selected="true" disabled="disabled">Mértékegység:</option>
+                        <?php
+                            foreach ($units as $unit) {
+                                echo '<option value="' . $unit['id'] . '">' . $unit['name'] . '</option>';
+                            }       
+                        ?>
+                    </select>`;
 </script>
 <script src="/client/assets/js/display_category.js"></script>
 <script src="/client/assets/js/upload.js"></script>

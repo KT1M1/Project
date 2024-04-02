@@ -58,8 +58,10 @@
 <div class="container">
     <div class="filter-container">
         <!--Close the filter window-->
-        <button class="close-filter">&#x2715</button>
-
+        <div class="close-div">
+            <h3>Részletes keresés</h3>
+            <button class="btn close-filter">&#x2715</button>
+        </div>
         <div>
             <div class="selectContainer">
                 <div id="main-category"></div>
@@ -89,7 +91,7 @@
                             echo '
                             <div class="cboxtags">
                                 <input type="checkbox" id="allergen_' . $allergen["id"] . '" name="allergen[]" value="' . $allergen["id"] . '">
-                                <label for="allergen_' . $allergen["id"] . '" class="allergen-lbl">' . ucfirst($allergen["name"]) . " mentes" . '</label>
+                                <label for="allergen_' . $allergen["id"] . '" class="allergen-lbl">' . ucfirst($allergen["name"]) . "-mentes" . '</label>
                             </div>
                             ';
                         }
@@ -99,7 +101,7 @@
         </div>
 
         <div class="search-btn-div">
-            <button id="search-button">Search</button>
+            <button id="search-button">Keresés</button>
         </div>
     </div>
 </div>

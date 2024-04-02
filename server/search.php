@@ -83,7 +83,7 @@ $sql =
     "SELECT food.*
     FROM food
     $filter_string 
-    LIMIT 10;";
+    LIMIT 30;";
 
 $stmt = $db->prepare($sql);
 
