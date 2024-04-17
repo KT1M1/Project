@@ -97,7 +97,7 @@ function format_main_sub_cat_hierarchy($main_cats, $sub_cats) {
     return $cat_array;
 }
 
-//Recept feltöltése
+// Upload Recipe
 
 function insert_ingredient($name){
     global $db;

@@ -93,7 +93,7 @@ $recipe_data_15 = get_recipe_by_id(15)[0];
         </div>
         <div class="ing-icon-piece">
             <a href="/page/search&occasion=54" class="rotate">
-                <img class="img-fluid ing-icon rotate-image" src="./client/assets/img/occasion/bda.webp" alt="Birthday">
+                <img class="img-fluid ing-icon rotate-image" src="./client/assets/img/occasion/birthday.webp" alt="Birthday">
                 <p class="ing-piece-txt">Születésnap</p>
             </a>
         </div>

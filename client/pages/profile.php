@@ -114,7 +114,6 @@ $liked = get_liked($user["id"]);
             ';
         }
         ?>
-
     </div>
 
 </div>

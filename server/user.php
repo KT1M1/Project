@@ -70,7 +70,8 @@ function registration($full_name, $user_name, $password, $password_again, $email
     try {
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
-        $sql="INSERT INTO `user`(`full_name`, `user_name`, `password`, `email`, `profile_pic`) VALUES (:full_name, :user_name, :password, :email, :profile_pic)";
+        $sql="INSERT INTO `user`(`full_name`, `user_name`, `password`, `email`, `profile_pic`) 
+        VALUES (:full_name, :user_name, :password, :email, :profile_pic)";
         $stmt = $db->prepare($sql);
         $stmt->bindParam(':full_name', $full_name, PDO::PARAM_STR);
         $stmt->bindParam(':user_name', $user_name, PDO::PARAM_STR);
@@ -94,7 +95,7 @@ function get_user_by_user_name( $user_name ) {
     $stmt = $db->prepare('SELECT * FROM user WHERE user_name = :user_name;');
     $stmt->bindParam(':user_name', $user_name);
     $stmt->execute();
-// Eredmények lekérdezése asszociatív tömbként
+
     $result = $stmt->fetchAll( PDO::FETCH_ASSOC );
 
     return $result;
@@ -120,10 +121,10 @@ function login_user($user_name, $password) {
     }
 
     session_start();
-    // Felhasználói információk tárolása munkameneti változókban
+    // Store user data
     $_SESSION['user'] = $user;
 
-    // Átirányítás bejelentkezés után a főoldalra    
+    // Redirect to main page  
     header('Location: /');
     exit();
     

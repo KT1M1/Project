@@ -1,5 +1,7 @@
 <?php
 
+// Get most popular recipes for main page
+
 require_once(__DIR__ . "/db.php");
 
 function get_populars() {
